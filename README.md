@@ -1,5 +1,5 @@
 ## HueCraft - A place to visualize your designs.
 <hr>
-<img src="light-thumbnail.png">
-<img src="dark-thumbnail.png">
+<img src="./public/light-thumbnail.png">
+<img src="./public/dark-thumbnail.png">
 <hr>
