@@ -1,1 +1,2 @@
-<img src="https://i.postimg.cc/J4ykhvBJ/Screenshot-2023-09-30-175627.png">
+<img src="light-thumbnail.png">
+<img src="dark-thumbnail.png">
