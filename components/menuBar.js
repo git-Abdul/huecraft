@@ -153,7 +153,7 @@ export function MenuBar() {
                             })
                         }
                     />
-                    <button onClick={() => setSelectedColor(null)}>Close</button>
+                    <Button onClick={() => setSelectedColor(null)} className="mt-2">Close</Button>
                 </div>
             )}
         </>

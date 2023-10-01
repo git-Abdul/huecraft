@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Separator } from "@/components/ui/separator"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,9 +12,17 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+import { BookmarkIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { Button } from "./ui/button";
-
+import { DocScroll } from "./DocScroll";
 
 export function NavBar() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,17 +30,36 @@ export function NavBar() {
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     };
-    const { setTheme } = useTheme()
+    const { setTheme } = useTheme();
     return (
         <>
             {/* Navbar */}
             <nav className="item-blur py-2 md:py-0 border-b dark:border-zinc-700 border-gray-300 select-none w-full top-0 z-10">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-1 px-6">
                     <Link href={"/"} className="flex items-center m-1">
+                        <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">Beta v0.2.1</span>
+                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">v0.2.1</span>
                     </Link>
-                    <div className="flex justify-normal left-0">
+                    <div className="flex justify-normal md:invisible visible">
+                        <Sheet className="border-none">
+                            <SheetTrigger asChild>
+                                <Button variant="outline" size="icon">
+                                    <BookmarkIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:filter-none invert dark:rotate-0 dark:scale-100" />
+                                    <span className="sr-only">Open Documentation</span>
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent>
+                                <SheetHeader>
+                                    <SheetTitle>Documentation</SheetTitle>
+                                    <SheetDescription>
+                                        <div className="flex justify-center"><DocScroll /></div>
+                                    </SheetDescription>
+                                </SheetHeader>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
+                    <div className="flex justify-normal left-0 gap-2">
                         <div className="md:invisible">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>

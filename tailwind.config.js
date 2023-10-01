@@ -25,7 +25,8 @@ module.exports = {
         "kanit": ["Kanit"],
         "borel": ["Borel"],
         "bebas": ["Bebas Neue"],
-        "outfit": ["Outfit"]
+        "outfit": ["Outfit"],
+        "inter": ["Inter"]
       },
       colors: {
         "primary": "#2563eb"

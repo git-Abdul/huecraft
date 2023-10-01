@@ -74,10 +74,10 @@ export default function Home() {
         </div>
         <div className="md:ml-32 md:mt-0 mt-20 flex md:justify-normal justify-center gap-8">
           <Link href={"/"}>
-            <button className="dark:bg-zinc-700 font-medium dark:text-white bg-slate-300 hover:bg-slate-400 text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 dark:hover:bg-zinc-800 transition ease-in-out duration-200">Get started</button>
+            <button style={{backgroundColor: secondaryColor}} className="font-medium dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Get started</button>
           </Link>
           <Link href={"/docs"}>
-            <button className="border font-medium dark:border-zinc-700 dark:hover:border-zinc-800 border-slate-500 hover:boder-slate-6 00 dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Documentation</button>
+            <button className="border font-medium dark:border-zinc-700 dark:hover:border-zinc-800 border-slate-500 hover:boder-slate-600 dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Documentation</button>
           </Link>
         </div>
       </div>

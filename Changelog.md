@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Major release - Beta v0.2.2] - 2/10/23
+
+### Added:
+- - Added docs page, more docs to be added in future!
+- - Added docs button on navbar on smaller screens
+- - Added icon to the navbar
+
+### Removed:
+- - Removed "Beta" label from navbar to save space
+
+### Bugs:
+- - Docs icon is white even on light mode
+- - When any link selected from docs menu in mobile(smaller screens) it goes to the link but goes back to the top when menu closed
+
 ## [Release - Beta v0.2.1] - 1/10/23
 
 ### Fixed:
