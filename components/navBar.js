@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/sheet"
 import { BookmarkIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { Button } from "./ui/button";
-import { DocScroll } from "./DocScroll";
+import { DocScroll } from "./DocScroll ";
 
 export function NavBar() {
     const [isNavOpen, setIsNavOpen] = useState(false);
