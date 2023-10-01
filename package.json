@@ -17,6 +17,7 @@
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
+    "react-color": "^2.19.3",
     "react-dom": "latest",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"

@@ -28,7 +28,7 @@ export function NavBar() {
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-1 px-6">
                     <Link href={"/"} className="flex items-center m-1">
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">Beta v0.1.1</span>
+                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">Beta v0.2.0</span>
                     </Link>
                     <div className="flex justify-normal left-0">
                         <div className="md:invisible">
@@ -91,9 +91,9 @@ export function NavBar() {
                                     <DropdownMenuContent>
                                         <DropdownMenuLabel>Available templates</DropdownMenuLabel>
                                         <DropdownMenuSeparator />
-                                        <DropdownMenuItem>Dashboard</DropdownMenuItem>
-                                        <DropdownMenuItem>Pricing page</DropdownMenuItem>
-                                        <DropdownMenuItem>Blog post</DropdownMenuItem>
+                                        <Link href={"/dashboard"}><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
+                                        <Link href={"/pricing-page"}><DropdownMenuItem>Pricing page</DropdownMenuItem></Link>
+                                        <Link href={"/blog-post"}><DropdownMenuItem>Blog post</DropdownMenuItem></Link>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
                             </li>

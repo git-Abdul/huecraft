@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Released - Beta v0.1.1]
+## [Major release - Beta v0.2.0] - 1/10/23
+
+### Changes:
+- - Added functionality to menubar //Please report any bugs 👈
+- - Added placeholder pages for all templates
+- - Added color pallete on homescreen
+
+## [Release - Beta v0.1.1] - 1/10/23
 
 ### Added
 
@@ -30,7 +37,7 @@ All notable changes to this project will be documented in this file.
 
 <hr>
 
-## [Unreleased - Beta v0.1]
+## [Unreleased - Beta v0.1] - 30/9/23
 
 ### Changes:
 - - Initialized repository
