@@ -2,9 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Release - Beta v0.2.1] - 1/10/23
+
+### Fixed:
+- - Bug fixes to the homepage where accent wouldnt show on page components.
+- - Better looking ui for color picker.
+
 ## [Major release - Beta v0.2.0] - 1/10/23
 
-### Changes:
+### Added:
 - - Added functionality to menubar //Please report any bugs 👈
 - - Added placeholder pages for all templates
 - - Added color pallete on homescreen

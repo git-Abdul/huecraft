@@ -28,7 +28,7 @@ export function NavBar() {
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-1 px-6">
                     <Link href={"/"} className="flex items-center m-1">
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">Beta v0.2.0</span>
+                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">Beta v0.2.1</span>
                     </Link>
                     <div className="flex justify-normal left-0">
                         <div className="md:invisible">
