@@ -19,8 +19,8 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { BookmarkIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
-import { Button } from "./ui/button";
-import { DocScroll } from "./DocScroll ";
+import { Button } from "@/components/ui/button";
+import { DocScroll } from "@/components/DocScroll";
 
 export function NavBar() {
     const [isNavOpen, setIsNavOpen] = useState(false);
