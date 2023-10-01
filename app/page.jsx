@@ -70,7 +70,7 @@ export default function Home() {
       <NavBar />
       <div>
         <div className="md:text-left text-center m-10">
-          <h1 className="md:text-7xl text-5xl font-bold font-poppins mt-32 md:mt-20 md:mr-44 md:ml-20">Visualize your <span className="font-borel text-primary">design</span> on the <span className="font-effect">real</span> web.</h1>
+          <h1 className="md:text-7xl text-5xl font-bold font-poppins mt-32 md:mt-20 md:mr-44 md:ml-20">Visualize your <span className="font-borel" style={{color: accentColor}}>design</span> on the <span className="font-effect">real</span> web.</h1>
         </div>
         <div className="md:ml-32 md:mt-0 mt-20 flex md:justify-normal justify-center gap-8">
           <Link href={"/"}>
@@ -188,7 +188,7 @@ export default function Home() {
               })
             }
           />
-          <button onClick={() => setSelectedColor(null)}>Close</button>
+          <Button onClick={() => setSelectedColor(null)} className="mt-2">Close</Button>
         </div>
       )}
     </main>
