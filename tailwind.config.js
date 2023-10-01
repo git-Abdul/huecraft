@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      width: {
+        "w-0.5": "2px"
+      },
       fontFamily: {
         "bridge": ["Bricolage Grotesque"],
         "poppins": ["Poppins"],

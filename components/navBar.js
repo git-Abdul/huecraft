@@ -27,8 +27,8 @@ export function NavBar() {
             <nav className="item-blur py-2 md:py-0 border-b dark:border-zinc-700 border-gray-300 select-none w-full top-0 z-10">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-1 px-6">
                     <Link href={"/"} className="flex items-center m-1">
-                        <h1 className="text-2xl md:mx-20 font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-slate-300 text-slate-500 -ml-16 invisible md:visible">Beta v0.1</span>
+                        <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
+                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">Beta v0.1.1</span>
                     </Link>
                     <div className="flex justify-normal left-0">
                         <div className="md:invisible">
@@ -79,6 +79,12 @@ export function NavBar() {
                         id="navbar-default"
                     >
                         <ul className="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                            <li className="py-3 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
+                                <Link href={"/"}><p>Home</p></Link>
+                            </li>
+                            <li className="py-3 font-bridge transition duration-300 ease-in-out text-lg">
+                                <Link href={"/docs"}><p>Docs</p></Link>
+                            </li>
                             <li className="py-3 font-bridge transition duration-300 ease-in-out text-lg">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger>Templates</DropdownMenuTrigger>

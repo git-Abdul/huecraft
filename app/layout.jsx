@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'HueCraft',
+  title: 'HueCraft • Dev',
   description: 'A website to test out new design fonts, colors and templates!',
 }
 
