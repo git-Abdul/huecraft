@@ -2,8 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -53,7 +51,7 @@ export function NavBar() {
                                 <SheetHeader>
                                     <SheetTitle>Documentation</SheetTitle>
                                     <SheetDescription>
-                                        <div className="flex justify-center"><DocScroll /></div>
+                                        <div className="flex justify-center"><DocScroll></DocScroll></div>
                                     </SheetDescription>
                                 </SheetHeader>
                             </SheetContent>
