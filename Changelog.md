@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Major release - Beta v0.2.3] - 2/10/23
+
+### Added: 
+- - More sections in documentation page.
+- - Better UI for color picker
+- - Better UI for documentations navbar
+- - Better UI for menubar.
+
+### Bugs:
+- - Docs icon is white even on light mode
+- - When any link selected from docs menu in mobile(smaller screens) it goes to the link but goes back to the top when menu closed
+- - Menubar bug on smaller screens.
+### Comment: Project is nearly perfect on desktop, smaller screens encouter many bugs.
+
 ## [Major release - Beta v0.2.2] - 2/10/23
 
 ### Added:

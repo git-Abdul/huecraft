@@ -10,7 +10,7 @@ import {
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
-import { SketchPicker } from "react-color";
+import { SketchPicker, ChromePicker } from "react-color";
 import Link from "next/link";
 
 export default function Home() {
@@ -168,8 +168,8 @@ export default function Home() {
         </div>
       </div>
       {selectedColor && (
-        <div style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200", }} >
-          <SketchPicker
+        <div className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200" style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200", }} >
+          <ChromePicker
             color={selectedColor === "text" ? textColor : selectedColor === "bg" ? bgColor : selectedColor === "primary" ? primaryColor : selectedColor === "secondary" ? secondaryColor : accentColor}
             onChange={color =>
               setSelectedColor(prevColor => {

@@ -37,7 +37,7 @@ export function NavBar() {
                     <Link href={"/"} className="flex items-center m-1">
                         <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">v0.2.2</span>
+                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">v0.2.3</span>
                     </Link>
                     <div className="flex justify-normal md:invisible visible">
                         <Sheet className="border-none">

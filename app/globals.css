@@ -7,8 +7,19 @@
     backdrop-filter: blur(4px);
 }
 
-.scroll-container {
+.para-container {
     max-width: 900px;
     overflow-y: auto;
+}
+
+.scroll-container {
+    max-width: 900px;
+    max-height: 100vh;
+    overflow-y: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
   }
-  

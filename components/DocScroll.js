@@ -3,37 +3,44 @@ import { Separator } from "@/components/ui/separator"
 
 export function DocScroll() {
     return (
-        <ScrollArea className="w-48 h-screen border-b border-l border-r dark:border-zinc-700 border-gray-300">
+        <ScrollArea className="w-48 fixed h-screen border-b text-center text-lg border-l border-r dark:border-zinc-700 border-gray-300">
             <div className="p-4 text-sm">
-                <h4 className="mb-4 text-xl font-medium leading-none md:block hidden">Documentation</h4>
-                <div className="mt-6">
-                    <a href="#"><p>Introduction</p></a>
-                    <Separator className="my-2"></Separator>
+                <h4 className="mb-4 text-xl p-2 font-inter font-medium leading-none text-center md:block hidden">Documentation</h4>
+                <a href="#">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>Introduction</p>
                 </div>
-                <div className="my-3">
-                    <a href="#how-it-works"><p>How it works?</p></a>
-                    <Separator className="my-2"></Separator>
+                </a>
+                <a href="#how-it-works">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>How it works?</p>
                 </div>
-                <div className="my-3">
-                    <a href="#colors"><p>Selecting colors</p></a>
-                    <Separator className="my-2"></Separator>
+                </a>
+                <a href="#colors">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>Selecting colors</p>
                 </div>
-                <div className="my-3">
-                    <a href="#theming"><p>Theming</p></a>
-                    <Separator className="my-2"></Separator>
+                </a>
+                <a href="#theming">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>Theming</p>
                 </div>
-                <div className="my-3">
-                    <a href="#upcoming"><p>What's to come?</p></a>
-                    <Separator className="my-2"></Separator>
+                </a>
+                <a href="#upcoming">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>What's to come?</p>
                 </div>
-                <div className="my-3">
-                    <a href="#changelog"><p>Changelog</p></a>
-                    <Separator className="my-2"></Separator>
+                </a>
+                <a href="#changelog">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>Changelog</p>
                 </div>
-                <div className="my-3">
-                    <a href="#version"><p>Version</p></a>
-                    <Separator className="my-2"></Separator>
+                </a>
+                <a href="#version">
+                <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-900 bg-slate-200 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
+                    <p>Version</p>
                 </div>
+                </a>
             </div>
         </ScrollArea>
     )

@@ -9,7 +9,7 @@ import {
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
-import { SketchPicker } from "react-color";
+import { ChromePicker, SketchPicker } from "react-color";
 
 export function MenuBar() {
     const { setTheme } = useTheme();
@@ -70,7 +70,7 @@ export function MenuBar() {
                 <div className="flex justify-center gap-2 item-blur mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "200" }}>
                     {/* Text Button */}
                     <Button
-                        className="py-6 px-7 text-md dark:text-white text-black"
+                        className="py-6 px-7 text-md dark:text-white text-black  font-inter font-bold"
                         style={{ backgroundColor: "#202020", color: "#fff" }}
                         onClick={() => setSelectedColor("text")}
                     >
@@ -79,7 +79,7 @@ export function MenuBar() {
 
                     {/* Background Button */}
                     <Button
-                        className="py-6 px-7 text-md dark:text-white"
+                        className="py-6 px-7 text-md dark:text-white font-inter font-bold"
                         style={{ backgroundColor: "#202020" }}
                         onClick={() => setSelectedColor("bg")}
                     >
@@ -88,7 +88,7 @@ export function MenuBar() {
 
                     {/* Primary Button */}
                     <Button
-                        className="py-6 px-7 text-md dark:text-white"
+                        className="py-6 px-7 text-md dark:text-white font-inter font-bold"
                         style={{ backgroundColor: primaryColor }}
                         onClick={() => setSelectedColor("primary")}
                     >
@@ -97,7 +97,7 @@ export function MenuBar() {
 
                     {/* Secondary Button */}
                     <Button
-                        className="py-6 px-7 text-md dark:text-white"
+                        className="py-6 px-7 text-md dark:text-white font-inter font-bold"
                         style={{ backgroundColor: secondaryColor }}
                         onClick={() => setSelectedColor("secondary")}
                     >
@@ -106,14 +106,14 @@ export function MenuBar() {
 
                     {/* Accent Button */}
                     <Button
-                        className="py-6 px-7 text-md dark:text-white"
+                        className="py-6 px-7 text-md dark:text-white font-inter font-bold"
                         style={{ backgroundColor: accentColor }}
                         onClick={() => setSelectedColor("accent")}
                     >
                         Accent
                     </Button>
 
-                    <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
+                    <hr className="w-0.5 rounded-lg h-12 bg-zinc-500 border-none" />
 
                     {/* ... other buttons */}
                     <DropdownMenu>
@@ -133,8 +133,9 @@ export function MenuBar() {
                 </div>
             </div>
             {selectedColor && (
-                <div style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200", }} >
-                    <SketchPicker
+                <div className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200" style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200", }} >
+                    <ChromePicker
+                        className="rounded-lg font-poppins font-medium"
                         color={selectedColor === "text" ? textColor : selectedColor === "bg" ? bgColor : selectedColor === "primary" ? primaryColor : selectedColor === "secondary" ? secondaryColor : accentColor}
                         onChange={color =>
                             setSelectedColor(prevColor => {
