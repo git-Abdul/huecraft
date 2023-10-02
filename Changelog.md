@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Major release - Beta v0.2.4] - 2/10/23
+
+### Fixes:
+- - Fixed padding bug of documentation icon on smaller screens.
+
+### Bugs: { In priority level: }
+- - Docs icon is white even on light mode
+- - When any link selected from docs menu in mobile(smaller screens) it goes to the link but goes back to the top when menu closed
+- - Menubar layout is bugged on smaller screens.
+
 ## [Major release - Beta v0.2.3] - 2/10/23
 
 ### Added: 

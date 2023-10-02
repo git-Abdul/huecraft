@@ -37,27 +37,27 @@ export function NavBar() {
                     <Link href={"/"} className="flex items-center m-1">
                         <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">v0.2.3</span>
+                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">v0.2.4</span>
                     </Link>
-                    <div className="flex justify-normal md:invisible visible">
-                        <Sheet className="border-none">
-                            <SheetTrigger asChild>
-                                <Button variant="outline" size="icon">
-                                    <BookmarkIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:filter-none invert dark:rotate-0 dark:scale-100" />
-                                    <span className="sr-only">Open Documentation</span>
-                                </Button>
-                            </SheetTrigger>
-                            <SheetContent>
-                                <SheetHeader>
-                                    <SheetTitle>Documentation</SheetTitle>
-                                    <SheetDescription>
-                                        <div className="flex justify-center"><DocScroll></DocScroll></div>
-                                    </SheetDescription>
-                                </SheetHeader>
-                            </SheetContent>
-                        </Sheet>
-                    </div>
                     <div className="flex justify-normal left-0 gap-2">
+                        <div className="md:invisible">
+                            <Sheet className="border-none">
+                                <SheetTrigger asChild>
+                                    <Button variant="outline" size="icon">
+                                        <BookmarkIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:filter-none invert dark:rotate-0 dark:scale-100" />
+                                        <span className="sr-only">Open Documentation</span>
+                                    </Button>
+                                </SheetTrigger>
+                                <SheetContent>
+                                    <SheetHeader>
+                                        <SheetTitle>Documentation</SheetTitle>
+                                        <SheetDescription>
+                                            <div className="flex justify-center"><DocScroll></DocScroll></div>
+                                        </SheetDescription>
+                                    </SheetHeader>
+                                </SheetContent>
+                            </Sheet>
+                        </div>
                         <div className="md:invisible">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
