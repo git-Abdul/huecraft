@@ -2,14 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Major release / Major bugfixes - Beta v0.2.5] - 5/10/23
+## [BugFix release - Beta v0.2.5] - 5/10/23
 
 ### Added: 
-- - Added new search documentation feature on desktop, using shortcuts
 - - More sections in documentation page.
 - - Made all three buttons on small screen navbar in identical style.
-- - Changelog button and section in docs.
-- - Added new version badge on navbar.
 
 ### Fixes:
 - - Documentation menu (DocScroll.js) layout was bugged on smaller screens - Fixed

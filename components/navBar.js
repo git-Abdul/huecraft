@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes"
+import { DocsIcons } from "./docsIcon";
+import { Badge } from "@/components/ui/badge";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -37,14 +39,14 @@ export function NavBar() {
                     <Link href={"/"} className="flex items-center m-1">
                         <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <span className="font-poppins text-sm mt-2 dark:text-zinc-400 text-zinc-500 ml-1">v0.2.4</span>
+                        <Badge className="ml-1" variant="secondary">v0.2.5</Badge>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">
                         <div className="md:invisible">
                             <Sheet className="border-none">
                                 <SheetTrigger asChild>
                                     <Button variant="outline" size="icon">
-                                        <BookmarkIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:filter-none invert dark:rotate-0 dark:scale-100" />
+                                        <DocsIcons />
                                         <span className="sr-only">Open Documentation</span>
                                     </Button>
                                 </SheetTrigger>
@@ -74,11 +76,12 @@ export function NavBar() {
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </div>
-                        <button
+                        <Button
                             onClick={toggleNav}
                             data-collapse-toggle="navbar-default"
                             type="button"
-                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 dark:focus:ring-gray-600"
+                            variant="outline"
+                            className="inline-flex items-center p-2 w-9 h-9 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 dark:focus:ring-gray-600"
                             aria-controls="navbar-default"
                             aria-expanded={isNavOpen ? "true" : "false"}
                         >
@@ -98,7 +101,7 @@ export function NavBar() {
                                     d="M1 1h15M1 7h15M1 13h15"
                                 />
                             </svg>
-                        </button>
+                        </Button>
                     </div>
                     <div
                         className={`${isNavOpen ? "block" : "hidden"
@@ -123,6 +126,9 @@ export function NavBar() {
                                         <Link href={"/blog-post"}><DropdownMenuItem>Blog post</DropdownMenuItem></Link>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
+                            </li>
+                            <li className="my-2">
+                                <Button variant="outline" className="dark:text-zinc-400 text-zinc-600">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
                             </li>
                             <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
                                 <DropdownMenu>

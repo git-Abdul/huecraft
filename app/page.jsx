@@ -1,6 +1,7 @@
 "use client"
 import { NavBar } from "@/components/navBar"
 import { useState } from "react";
+import { RotateIcons } from "@/components/rotateIcons";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -70,11 +71,17 @@ export default function Home() {
       <NavBar />
       <div>
         <div className="md:text-left text-center m-10">
-          <h1 className="md:text-7xl text-5xl font-bold font-poppins mt-32 md:mt-20 md:mr-44 md:ml-20">Visualize your <span className="font-borel" style={{color: accentColor}}>design</span> on the <span className="font-effect">real</span> web.</h1>
+          <h1 className="md:text-7xl text-5xl font-bold font-poppins mt-32 md:mt-20 md:mr-44 md:ml-20">Visualize your <span className="font-borel" style={{ color: accentColor }}>design</span> on the <span className="font-effect">real</span> web.</h1>
+          <div className="mt-10 md:hidden lg:hidden block">
+            <div className="flex justify-center items-center gap-3">
+              <p className="md:mr-44 md:ml-20 text-xl text-zinc-400">Rotate your phone</p>
+              <RotateIcons />
+            </div>
+          </div>
         </div>
         <div className="md:ml-32 md:mt-0 mt-20 flex md:justify-normal justify-center gap-8">
           <Link href={"/"}>
-            <button style={{backgroundColor: secondaryColor}} className="font-medium dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Get started</button>
+            <button style={{ backgroundColor: secondaryColor }} className="font-medium dark:text-white text-white hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Get started</button>
           </Link>
           <Link href={"/docs"}>
             <button className="border font-medium dark:border-zinc-700 dark:hover:border-zinc-800 border-slate-500 hover:boder-slate-600 dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Documentation</button>
@@ -102,7 +109,7 @@ export default function Home() {
       {/*MenuBar*/}
 
       <div className="text-center items-center justify-center flex invisible md:visible">
-        <div className="flex justify-center gap-2 item-blur mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "200" }}>
+        <div className="flex justify-center gap-2 item-blur bg-zinc-900 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "200" }}>
           {/* Text Button */}
           <Button
             className="py-6 px-7 text-md dark:text-white text-black"
@@ -153,7 +160,7 @@ export default function Home() {
           {/* ... other buttons */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" className="w-[3rem] h-[3rem]">
+              <Button variant="secondary" size="icon" className="w-[3rem] h-[3rem]">
                 <SunIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <MoonIcon className="absolute h-[2rem] w-[2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>

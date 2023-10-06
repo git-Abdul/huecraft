@@ -2,6 +2,7 @@ import './globals.css'
 import './fonts.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Inter } from 'next/font/google'
+import { Commands } from '@/components/command'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,13 +18,16 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="favicon.png" type='png' sizes="any" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider 
+        <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className='select-none'>
+            {children}
+          </div>
+          <Commands />
         </ThemeProvider>
       </body>
     </html>
