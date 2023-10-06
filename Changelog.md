@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Major release / Major bugfixes - Beta v0.2.5] - 5/10/23
+# Bugs: Beta v0.2.5 - 6/10/23
+- Search documentation function not working on website, but worked on testing server
+- Changelog.md not-found error.
+
+## [Major release / Major bugfixes - Beta v0.2.5] - 6/10/23
 
 ### Added: 
 - - Added new search documentation feature on desktop, using shortcuts
