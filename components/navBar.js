@@ -39,7 +39,7 @@ export function NavBar() {
                     <Link href={"/"} className="flex items-center m-1">
                         <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <Badge className="ml-1" variant="secondary">v0.2.5</Badge>
+                        <Badge className="ml-1" variant="secondary">v0.2.6</Badge>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">
                         <div className="md:invisible">
@@ -108,27 +108,52 @@ export function NavBar() {
                             } w-full md:block md:w-auto`}
                         id="navbar-default"
                     >
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
-                            <li className="py-3 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
+                        <ul className="flex flex-col p-4 md:p-0 md:mb-0 -mb-16 mt-4 md:flex-row md:space-x-5 font-medium md:mt-0 md:border-0">
+                            <li className="my-2 block md:hidden">
+                                <Button variant="outline" className="dark:text-zinc-400 text-zinc-600">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
+                            </li>
+                            <li className="py-3 rounded-lg bg-zinc-700 p-4 my-2 md:my-0 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
                                 <Link href={"/"}><p>Home</p></Link>
                             </li>
-                            <li className="py-3 font-bridge transition duration-300 ease-in-out text-lg">
+                            <li className="py-3 rounded-lg bg-zinc-700 p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge transition duration-300 ease-in-out text-lg">
                                 <Link href={"/docs"}><p>Docs</p></Link>
                             </li>
-                            <li className="py-3 font-bridge transition duration-300 ease-in-out text-lg">
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger>Templates</DropdownMenuTrigger>
-                                    <DropdownMenuContent>
-                                        <DropdownMenuLabel>Available templates</DropdownMenuLabel>
-                                        <DropdownMenuSeparator />
-                                        <Link href={"/dashboard"}><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
-                                        <Link href={"/pricing-page"}><DropdownMenuItem>Pricing page</DropdownMenuItem></Link>
-                                        <Link href={"/blog-post"}><DropdownMenuItem>Blog post</DropdownMenuItem></Link>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li className="my-2">
+                            <DropdownMenu>
+                                <DropdownMenuTrigger>
+                                    <li className="py-3 rounded-lg bg-zinc-700 p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge transition duration-300 ease-in-out text-lg">
+                                        <p className="text-left">Templates</p>
+                                        <DropdownMenuContent>
+                                            <DropdownMenuLabel>Available templates</DropdownMenuLabel>
+                                            <DropdownMenuSeparator />
+                                            <Link href={"/dashboard"}><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
+                                            <Link href={"/pricing-page"}><DropdownMenuItem>Pricing page</DropdownMenuItem></Link>
+                                            <Link href={"/blog-post"}><DropdownMenuItem>Blog post</DropdownMenuItem></Link>
+                                        </DropdownMenuContent>
+                                    </li>
+                                </DropdownMenuTrigger>
+                            </DropdownMenu>
+                            <li className="my-2 hidden md:block">
                                 <Button variant="outline" className="dark:text-zinc-400 text-zinc-600">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
+                            </li>
+                            <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
+                                <div className="">
+                                    <Sheet className="border-none">
+                                        <SheetTrigger asChild>
+                                            <Button variant="outline" size="icon">
+                                                <DocsIcons />
+                                                <span className="sr-only">Open Documentation</span>
+                                            </Button>
+                                        </SheetTrigger>
+                                        <SheetContent>
+                                            <SheetHeader>
+                                                <SheetTitle>Documentation</SheetTitle>
+                                                <SheetDescription>
+                                                    <div className="flex justify-center"><DocScroll></DocScroll></div>
+                                                </SheetDescription>
+                                            </SheetHeader>
+                                        </SheetContent>
+                                    </Sheet>
+                                </div>
                             </li>
                             <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
                                 <DropdownMenu>

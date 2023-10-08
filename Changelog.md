@@ -2,9 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-# Bugs: Beta v0.2.5 - 6/10/23
-- Search documentation function not working on website, but worked on testing server
-- Changelog.md not-found error.
+## [Release - Beta v0.2.6] - 8/10/23
+
+### Added:
+- - Improvements to navbar on smaller screens - Added button like menus
+- - Added documentation button to navbar on large screens.
+
+### Improvements:
+- - Beautified changelog.md
+
+### Bugs:
+- - Changelog.md not-found error.
+<hr>
 
 ## [Major release / Major bugfixes - Beta v0.2.5] - 6/10/23
 
@@ -20,6 +29,11 @@ All notable changes to this project will be documented in this file.
 - - Docs icon is white even on light mode - Fixed
 - - Menubar layout is bugg  ed on smaller screens. - Fixed
 
+### Bugs: 
+- Search documentation function not working on website, but worked on testing server
+- Changelog.md not-found error.
+<hr>
+
 ## [Major release - Beta v0.2.4] - 2/10/23
 
 ### Fixes:
@@ -29,6 +43,7 @@ All notable changes to this project will be documented in this file.
 - - Docs icon is white even on light mode
 - - When any link selected from docs menu in mobile(smaller screens) it goes to the link but goes back to the top when menu closed
 - - Menubar layout is bugged on smaller screens.
+<hr>
 
 ## [Major release - Beta v0.2.3] - 2/10/23
 
@@ -43,6 +58,7 @@ All notable changes to this project will be documented in this file.
 - - When any link selected from docs menu in mobile(smaller screens) it goes to the link but goes back to the top when menu closed
 - - Menubar bug on smaller screens.
 ### Comment: Project is nearly perfect on desktop, smaller screens encouter many bugs.
+<hr>
 
 ## [Major release - Beta v0.2.2] - 2/10/23
 
@@ -57,12 +73,14 @@ All notable changes to this project will be documented in this file.
 ### Bugs:
 - - Docs icon is white even on light mode
 - - When any link selected from docs menu in mobile(smaller screens) it goes to the link but goes back to the top when menu closed
+<hr>
 
 ## [Release - Beta v0.2.1] - 1/10/23
 
 ### Fixed:
 - - Bug fixes to the homepage where accent wouldnt show on page components.
 - - Better looking ui for color picker.
+<hr>
 
 ## [Major release - Beta v0.2.0] - 1/10/23
 
@@ -70,31 +88,18 @@ All notable changes to this project will be documented in this file.
 - - Added functionality to menubar //Please report any bugs 👈
 - - Added placeholder pages for all templates
 - - Added color pallete on homescreen
+<hr>
 
 ## [Release - Beta v0.1.1] - 1/10/23
 
 ### Added
-
-- [Feature/Enhancement] 
 - - MenuBar: For easy accessibility of changing colors and fonts. {No functionality as of now}
 - - Github Pages: Website hosted on Github Pages.
 
 ### Changed
-
-- [Change]
 - - Themes: Added in menubar and mobile view.
 
-### Deprecated
-
-- [Deprecated] None.
-
-### Removed
-
-- [Removed] None.
-
 ### Fixed
-
-- [BugFix]
 - - Bug fixed: Version number would not show on mobile view.
 
 <hr>

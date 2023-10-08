@@ -35,7 +35,7 @@ export default function Docs() {
                         <h1 className="font-inter font-bold text-4xl mt-12" id="changelog">Changelog</h1>
                         <p className="mt-1 text-zinc-500 mb-6">All the latest updates, additions and bug fixes featured here.</p>
                         <div className="para-container">
-                            <Link href={"changelog.md"}><Button variant="">Click here to access changelog</Button></Link>
+                            <Link target="_blank" href={"https://github.com/git-Abdul/huecraft/blob/master/public/Changelog.md"}><Button variant="">Click here to access changelog</Button></Link>
                         </div>
                         <Separator />
                     </div>
@@ -61,7 +61,7 @@ export default function Docs() {
                 <h1 className="font-inter font-bold text-4xl mt-12" id="changelog">Changelog</h1>
                 <p className="mt-1 text-zinc-500 mb-6">All the latest updates, additions and bug fixes featured here.</p>
                 <div className="para-container">
-                    <Link href={"changelog.md"}><Button variant="">Click here to access changelog</Button></Link>
+                    <Link target="_blank" href={"https://github.com/git-Abdul/huecraft/blob/master/public/Changelog.md"}><Button variant="">Click here to access changelog</Button></Link>
                 </div>
             </div>
         </main>
