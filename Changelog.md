@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Release - Beta v0.2.6.1] - 8/10/23
+## [Release - Beta v0.2.61] - 8/10/23
 
 ### Fixes:
 - - Fixed light mode theming for navbar buttons on smaller screens

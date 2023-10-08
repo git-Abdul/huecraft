@@ -39,7 +39,7 @@ export function NavBar() {
                     <Link href={"/"} className="flex items-center m-1">
                         <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <Badge className="ml-1" variant="secondary">v0.2.6</Badge>
+                        <Badge className="ml-1" variant="secondary">v0.2.61</Badge>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">
                         <div className="md:invisible">
