@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Release - Beta v0.2.61] - 8/10/23
 
+### Additional fixes:
+- - Fixed issue where bg of navbar item buttons would be seen on bigger screens too
+
 ### Fixes:
 - - Fixed light mode theming for navbar buttons on smaller screens
 - - Changelog.md not-found error. - Fixed

@@ -112,15 +112,15 @@ export function NavBar() {
                             <li className="my-2 block md:hidden">
                                 <Button variant="outline" className="dark:text-zinc-400 text-zinc-600">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
                             </li>
-                            <li className="py-3 rounded-lg dark:bg-zinc-700 bg-slate-300 p-4 my-2 md:my-0 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
+                            <li className="py-3 rounded-lg dark:bg-zinc-700 md:dark:bg-transparent bg-slate-300 p-4 my-2 md:my-0 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
                                 <Link href={"/"}><p>Home</p></Link>
                             </li>
-                            <li className="py-3 rounded-lg dark:bg-zinc-700 bg-slate-300 p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge transition duration-300 ease-in-out text-lg">
+                            <li className="py-3 rounded-lg dark:bg-zinc-700 md:dark:bg-transparent bg-slate-300 p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge transition duration-300 ease-in-out text-lg">
                                 <Link href={"/docs"}><p>Docs</p></Link>
                             </li>
                             <DropdownMenu>
                                 <DropdownMenuTrigger>
-                                    <li className="py-3 rounded-lg dark:bg-zinc-700 bg-slate-300  p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge transition duration-300 ease-in-out text-lg">
+                                    <li className="py-3 rounded-lg dark:bg-zinc-700 bg-slate-300 md:dark:bg-transparent  p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge transition duration-300 ease-in-out text-lg">
                                         <p className="text-left">Templates</p>
                                         <DropdownMenuContent>
                                             <DropdownMenuLabel>Available templates</DropdownMenuLabel>
