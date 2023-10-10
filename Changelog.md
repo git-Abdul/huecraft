@@ -2,7 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Release - Beta v0.2.61] - 8/10/23
+## [Major Release - Beta v0.2.7] - 10/10/23
+
+### Added: 
+- - New version popup alert on homescreen - Shows what the update is about.
+- - Added more sections to command menu. (Ctrl+K)
+- - Added Next Image for favicon logo on navbar (Better performance on the web)
+
+### Improvements:
+- - Made navbar fixed on all screens. // Report any issues.
+- - Added navbar blur to navbar on all screens.
+- - HomeScreen color boxes UI improved.
+- - Documentation menu UI improved.
+- - Menubar UI improved to a great extent.
+- - Improved color picker UI.
+- - Added new section in docs page
+- - Re-structured code in home-page, page.jsx
+- - Changed link for changelog.md
+- - Changed navbar fixed state in smaller screens.
+
+### Fixed:
+- - DocsMenu links on home screen would not redirect to docs page but redirect to homepage with index value - Fixed.
+
+### Bugs:
+- - Alert popup menu bug on smaller screens - Changelog button is smaller than cancel button.
+
+## [Patch - 0.2.61] - 8/10/23
 
 ### Additional fixes:
 - - Fixed issue where bg of navbar item buttons would be seen on bigger screens too

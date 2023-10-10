@@ -6,11 +6,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.item-blur {
-    background-color: rgba(255, 255, 255, 0.021);
-    backdrop-filter: blur(4px);
-}
-
 .para-container {
     max-width: 900px;
     overflow-y: auto;

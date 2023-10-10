@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes"
 import { DocsIcons } from "./docsIcon";
+import { DocsList } from "./DocsList";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -20,9 +22,9 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { BookmarkIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
+
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button";
-import { DocScroll } from "@/components/DocScroll";
 
 export function NavBar() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -34,12 +36,12 @@ export function NavBar() {
     return (
         <>
             {/* Navbar */}
-            <nav className="item-blur py-2 md:py-0 border-b dark:border-zinc-700 border-gray-300 select-none w-full top-0 z-10">
+            <nav className="backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 fixed py-2 md:py-0 border-b dark:border-zinc-700 border-gray-300 select-none w-full top-0 z-10">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-1 px-6">
                     <Link href={"/"} className="flex items-center m-1">
-                        <img src="favicon.png" alt="logo" className="h-8 w-8 mr-2" />
+                        <Image src="favicon.png" alt="logo" className="h-8 w-8 mr-2" width={"0"} height={"0"} />
                         <h1 className="text-2xl font-outfit font-bold">HueCraft</h1>
-                        <Badge className="ml-1" variant="secondary">v0.2.61</Badge>
+                        <Badge className="ml-1" variant="secondary">v0.2.7</Badge>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">
                         <div className="md:invisible">
@@ -54,7 +56,7 @@ export function NavBar() {
                                     <SheetHeader>
                                         <SheetTitle>Documentation</SheetTitle>
                                         <SheetDescription>
-                                            <div className="flex justify-center"><DocScroll></DocScroll></div>
+                                            <div className="flex justify-center"><DocsList /></div>
                                         </SheetDescription>
                                     </SheetHeader>
                                 </SheetContent>
@@ -137,7 +139,7 @@ export function NavBar() {
                             </li>
                             <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
                                 <div className="">
-                                    <Sheet className="border-none">
+                                    <Sheet>
                                         <SheetTrigger asChild>
                                             <Button variant="outline" size="icon">
                                                 <DocsIcons />
@@ -146,9 +148,9 @@ export function NavBar() {
                                         </SheetTrigger>
                                         <SheetContent>
                                             <SheetHeader>
-                                                <SheetTitle>Documentation</SheetTitle>
+                                                <SheetTitle className="flex justify-center text-xl">Documentation</SheetTitle>
                                                 <SheetDescription>
-                                                    <div className="flex justify-center"><DocScroll></DocScroll></div>
+                                                    <div className="flex justify-center m-0"><DocsList /></div>
                                                 </SheetDescription>
                                             </SheetHeader>
                                         </SheetContent>
