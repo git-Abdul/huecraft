@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Patch notes - Beta v0.2.71] - 10/10/23
+## NOTE: Patch notes version number won't be displayed on the navbar.
+
+### Fixed:
+- - Layout of popup alert on homescreen was not perfect, since one button was bigger than other on small screens - Fixed
+
+<hr>
+
 ## [Major Release - Beta v0.2.7] - 10/10/23
 
 ### Added: 

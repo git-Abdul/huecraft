@@ -97,7 +97,14 @@ export default function Home() {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <Link target="_blank" href={"https://github.com/git-Abdul/huecraft/blob/master/Changelog.md"} className="flex justify-center md:block"><AlertDialogAction>Changelog</AlertDialogAction></Link>
+                  <AlertDialogAction
+                    onClick={() => {
+                      window.open("https://github.com/git-Abdul/huecraft/blob/master/Changelog.md", "_blank");
+                    }}
+                  >
+                    Changelog
+                  </AlertDialogAction>
+
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
