@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file.
 
 ### Bugs:
 - - Alert popup menu bug on smaller screens - Changelog button is smaller than cancel button.
+<hr>
 
 ## [Patch - 0.2.61] - 8/10/23
 
@@ -35,6 +36,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes:
 - - Fixed light mode theming for navbar buttons on smaller screens
 - - Changelog.md not-found error. - Fixed
+<hr>
 
 ## [Release - Beta v0.2.6] - 8/10/23
 
