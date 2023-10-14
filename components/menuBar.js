@@ -17,7 +17,7 @@ export function MenuBar() {
     const [selectedColor, setSelectedColor] = useState(null);
     const [textColor, setTextColor] = useState("#fff"); 
     const [bgColor, setBgColor] = useState("#202020"); 
-    const [primaryColor, setPrimaryColor] = useState("#023e8a");
+    const [primaryColor, setPrimaryColor] = useState("#1E6ED3");
     const [secondaryColor, setSecondaryColor] = useState("#0077b6");
     const [accentColor, setAccentColor] = useState("#0096c7");
 

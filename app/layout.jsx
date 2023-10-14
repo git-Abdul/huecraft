@@ -15,12 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="icon" href="favicon.png" type='png' sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body className="bg-light dark:bg-dark">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

@@ -6,6 +6,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: var(--bg-color);
+}
+
 .para-container {
     max-width: 900px;
     overflow-y: auto;

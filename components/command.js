@@ -35,9 +35,16 @@ export function Commands() {
         <CommandSeparator />
         <CommandGroup heading="Main pages">
           <CommandSeparator />
-          <CommandItem>Home</CommandItem>
+          <Link href={"/"}><CommandItem>Home</CommandItem></Link>
           <Link href={"/docs"}><CommandItem>Docs</CommandItem></Link>
           <CommandItem>Templates</CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading="Templates">
+          <CommandSeparator />
+          <Link href={"/dashboard"}><CommandItem>Dashboard</CommandItem></Link>
+          <Link href={"/pricing-page"}><CommandItem>Pricing Page</CommandItem></Link>
+          <Link href={"/blog-post"}><CommandItem>Blog Post</CommandItem></Link>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Documentation">

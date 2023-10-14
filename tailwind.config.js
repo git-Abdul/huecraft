@@ -29,7 +29,9 @@ module.exports = {
         "inter": ["Inter"]
       },
       colors: {
-        "primary": "#2563eb"
+        "primary": "#2563eb",
+        "light": "#ecf0f3",
+        "dark": "#161719"
       },
       keyframes: {
         "accordion-down": {
