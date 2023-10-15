@@ -76,7 +76,7 @@ export default function Dashboard() {
     },
   ]
   const [selectedColor, setSelectedColor] = useState(null);
-  const [textColor, setTextColor] = useState("#fff");
+  const [textColor, setTextColor] = useState("#CEC6C6");
   const [bgColor, setBgColor] = useState("#6676A1");
   const [primaryColor, setPrimaryColor] = useState("#8f8fff");
   const [secondaryColor, setSecondaryColor] = useState("#cec6c6");
@@ -131,15 +131,9 @@ export default function Dashboard() {
   return (
     <main>
       <NavBar />
-      <div className="mt-20 md:hidden lg:hidden block">
-        <div className="flex justify-center items-center gap-3">
-          <p className="md:mr-44 md:ml-20 text-xl text-zinc-400 font-inter font-bold">Rotate your phone</p>
-          <RotateIcons />
-        </div>
-      </div>
-      <Card style={{ backgroundColor: bgColor }} className="mt-10 md:mt-20 md:mx-10 sm:mx-2 mx-1">
+      <Card style={{ backgroundColor: bgColor }} className="mt-20 md:mx-10 sm:mx-2 mx-3">
         <CardHeader>
-          <CardTitle><h1 style={{ color: textColor }} className="text-3xl font-inter">Dashboard</h1>
+          <CardTitle><h1 style={{ color: textColor }} className="text-4xl font-inter">Dashboard</h1>
             <CardDescription style={{ color: secondaryColor }} className="font-inter font-thin">A simple dashboard template.</CardDescription>
             <Card className="mt-2 border-none" style={{ backgroundColor: secondaryColor, color: textColor }}>
               <div className="flex gap-2 justify-normal p-4">
@@ -227,11 +221,15 @@ export default function Dashboard() {
           <p className="mt-5 text-sm font-inter" style={{ color: accentColor }}>Thank you for using our dashboard. If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
         </CardFooter>
       </Card>
+      <br />
+      <br />
+      <br />
+      <br />
 
       {/* MenuBar */}
       <div className="text-center items-center justify-center flex invisible md:visible">
-        <div className="flex justify-center gap-2 backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
-          {/* Color buttons */}
+        <div className="flex justify-center gap-2 font-poppins backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
+          {/* Color buttons */} 
           <Button
             className="py-6 px-7 text-md dark:text-white text-black"
             style={{ backgroundColor: "#202020", color: "#fff" }}
@@ -281,7 +279,6 @@ export default function Dashboard() {
             <DropdownMenuContent>
               <DropdownMenuItem onClick={() => applyColor("light")}>Light</DropdownMenuItem>
               <DropdownMenuItem onClick={() => applyColor("dark")}>Dark</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => applyColor("system")}>System</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

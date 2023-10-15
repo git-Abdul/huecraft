@@ -133,7 +133,7 @@ export function NavBar() {
                             data-collapse-toggle="navbar-default"
                             type="button"
                             variant="outline"
-                            className="inline-flex items-center p-2 w-9 h-9 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 dark:focus:ring-gray-600"
+                            className="inline-flex items-center p-2 w-9 h-9 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 dark:text-white text-black dark:focus:ring-gray-600"
                             aria-controls="navbar-default"
                             aria-expanded={isNavOpen ? "true" : "false"}
                         >

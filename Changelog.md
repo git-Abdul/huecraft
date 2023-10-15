@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Major Release - Beta v0.2.8] - Date/10/23
+## [Major Release - Beta v0.2.9] - 15/10/23
+
+### Major UI overhaul is upcoming in update 0.3.0 - This update will be the first official release instead of the beta, therefore version will be changed to v1.0
+
+### Added: 
+- Added blog-post page in templates - Major
+
+### Fixed: 
+- Fixed issue where menubar would cover template content.
+
+<hr>
+
+## [Major Release - Beta v0.2.8] - 14/10/23
 
 ### Added:
 - <b> Added dashboard page: Major </b>

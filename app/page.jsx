@@ -152,7 +152,7 @@ export default function Home() {
 
       {/* MenuBar */}
       <div className="text-center items-center justify-center flex invisible md:visible">
-        <div className="flex justify-center gap-2 backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
+        <div className="flex justify-center gap-2 font-poppins backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
           {/* Color buttons */}
           <Button
             className="py-6 px-7 text-md dark:text-white text-black"
@@ -203,7 +203,6 @@ export default function Home() {
             <DropdownMenuContent>
               <DropdownMenuItem onClick={() => applyColor("light")}>Light</DropdownMenuItem>
               <DropdownMenuItem onClick={() => applyColor("dark")}>Dark</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => applyColor("system")}>System</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
