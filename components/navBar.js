@@ -86,7 +86,7 @@ export function NavBar() {
                 </CommandDialog>
             </div >
             {/* Navbar */}
-            < nav className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30 fixed py-2 md:py-0 dark:border-zinc-700 border-gray-300 select-none w-full top-0 z-10" >
+            < nav className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30 fixed py-3 md:py-0 dark:border-zinc-700 border-gray-300 select-none w-full top-0 z-10" >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
                     <Link href={"/"} className="flex items-center m-1">
                         <Image src="favicon.png" alt="logo" className="h-8 w-8 mr-2" width={"0"} height={"0"} />
@@ -160,7 +160,7 @@ export function NavBar() {
                             } w-full md:block md:w-auto`}
                         id="navbar-default"
                     >
-                        <ul className="flex flex-col p-4 md:p-0 md:mb-0 -mb-16 mt-4 md:flex-row md:space-x-3 font-medium md:mt-0 md:border-0">
+                        <ul className="flex flex-col p-4 md:p-0 md:mb-0 -mb-32 mt-4 md:flex-row md:space-x-3 font-medium md:mt-0 md:border-0 transition-all ease-in-out duration-75">
                             <li className="my-2 block md:hidden">
                                 <Button onClick={toggleDialog} variant="outline" className="dark:text-zinc-400 text-zinc-600 backdrop-blur-md">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
                             </li>

@@ -19,7 +19,6 @@ import { ArchiveIcon, BarChartIcon, EnvelopeOpenIcon, FaceIcon, MoonIcon, Rocket
 import { Button } from "@/components/ui/button";
 import { ChromePicker } from "react-color";
 import { NavBar } from "@/components/navBar";
-import { RotateIcons } from "@/components/rotateIcons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 

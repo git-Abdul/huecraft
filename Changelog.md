@@ -2,9 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Major Release - 1.0] - 16/10/23
+
+### Added:
+- Pricing page added
+
+### Fixed:
+- Navbar bugs on small screens fixed.
+<hr>
+
 ## [Major Release - Beta v0.2.9] - 15/10/23
 
-### Major UI overhaul is upcoming in update 0.3.0 - This update will be the first official release instead of the beta, therefore version will be changed to v1.0
+### Note on update v0.3.0 This update will be the first official release instead of the beta, therefore version will be changed to v1.0
 
 ### Added: 
 - Added blog-post page in templates - Major
