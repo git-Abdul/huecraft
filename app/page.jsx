@@ -96,9 +96,9 @@ export default function Home() {
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>✨ New update! v0.2.8</AlertDialogTitle>
+                  <AlertDialogTitle>✨ New update! v1.1</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This update focuses on polishing the UI and making it perfect before moving on to major additions like the templates page. All the changes and features of this update will be listed down in the changelog for you to check out!
+                    Second most stable release after the main release. It brings new metadata changes, changes to embeds around other platforms, and fixes bugs that were left unoticed.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

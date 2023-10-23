@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Release 1.1] - 23/10/23
+
+### Fixed:
+- Fixed the new update popup menu not updated during new releases.
+
+### Added: 
+- New metadata for the application.
+
 ## [Major Release - 1.0] - 16/10/23
 
 ### Added:
