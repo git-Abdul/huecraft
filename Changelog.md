@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Major Release 1.2] - 5/11/23
+
+### Added:
+- Added icons to Command menu, and theme selector menu on all color picker bars and navbars.
+- Added new download colors button - In development
+- Added new hover notification for download button that states "in R&D"
+- Changed fonts in homepage
+- Added mica UI on most popups and sliders.
+- Changed theme colors for all templates.
+- Added functionality to download button on color picker bar.   
+
+### Fixes:
+- Fixed bug where the text color of blog-post page would noot change.
+
+<hr>
+
 ## [Release 1.1] - 23/10/23
 
 ### Fixed:
@@ -9,6 +25,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added: 
 - New metadata for the application.
+<hr>
 
 ## [Major Release - 1.0] - 16/10/23
 

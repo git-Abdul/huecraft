@@ -33,7 +33,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 
-import { HomeIcon, LayersIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { HomeIcon, LayersIcon, MoonIcon, SunIcon, FileTextIcon, CalendarIcon, IdCardIcon, ReaderIcon, InfoCircledIcon, QuestionMarkCircledIcon, BlendingModeIcon, EyeOpenIcon, LaptopIcon, FileIcon, RocketIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button";
 
 export function NavBar() {
@@ -60,27 +60,98 @@ export function NavBar() {
                         <CommandSeparator />
                         <CommandGroup heading="Main pages">
                             <CommandSeparator />
-                            <Link href={"/"}><CommandItem>Home</CommandItem></Link>
-                            <Link href={"/docs"}><CommandItem>Docs</CommandItem></Link>
-                            <CommandItem>Templates</CommandItem>
+
+                            <Link href={"/"}>
+                                <CommandItem>
+                                    <HomeIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Home</span>
+                                </CommandItem>
+                            </Link>
+
+                            <Link href={"/docs"}>
+                                <CommandItem>
+                                    <FileTextIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Documentation</span>
+                                </CommandItem>
+                            </Link>
+
+                            <Link href={"/"}>
+                                <CommandItem>
+                                    <LayersIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Templates</span>
+                                </CommandItem>
+                            </Link>
+
                         </CommandGroup>
                         <CommandSeparator />
+
                         <CommandGroup heading="Templates">
                             <CommandSeparator />
-                            <Link href={"/dashboard"}><CommandItem>Dashboard</CommandItem></Link>
-                            <Link href={"/pricing-page"}><CommandItem>Pricing Page</CommandItem></Link>
-                            <Link href={"/blog-post"}><CommandItem>Blog Post</CommandItem></Link>
+                            <Link href={"/dashboard"}>
+                                <CommandItem>
+                                    <CalendarIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Dashboard</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/pricing-page"}>
+                                <CommandItem>
+                                    <IdCardIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Pricing page</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/blog-post"}>
+                                <CommandItem>
+                                    <ReaderIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Blog post</span>
+                                </CommandItem>
+                            </Link>
                         </CommandGroup>
+
                         <CommandSeparator />
                         <CommandGroup heading="Documentation">
                             <CommandSeparator />
-                            <Link href={"/docs#introduction"}><CommandItem>Introduction</CommandItem></Link>
-                            <Link href={"/docs#how-it-works"}><CommandItem>How does it work?</CommandItem></Link>
-                            <Link href={"/docs#colors"}><CommandItem>Selecting Colors</CommandItem></Link>
-                            <Link href={"/docs#theming"}><CommandItem>Theming</CommandItem></Link>
-                            <Link href={"/docs#Upcoming"}><CommandItem>Upcoming</CommandItem></Link>
-                            <Link href={"/docs#changelog"}><CommandItem>Changelog</CommandItem></Link>
-                            <Link href={"/docs#version"}><CommandItem>Version</CommandItem></Link>
+                            <Link href={"/docs#introduction"}>
+                                <CommandItem>
+                                    <InfoCircledIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Introduction</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/docs#how-it-works"}>
+                                <CommandItem>
+                                    <QuestionMarkCircledIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">How does it work?</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/docs#colors"}>
+                                <CommandItem>
+                                    <BlendingModeIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Selecting colors</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/docs#theming"}>
+                                <CommandItem>
+                                    <EyeOpenIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Theming</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/docs#upcoming"}>
+                                <CommandItem>
+                                    <LaptopIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Upcoming</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/docs#changelog"}>
+                                <CommandItem>
+                                    <FileIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Changelog</span>
+                                </CommandItem>
+                            </Link>
+                            <Link href={"/docs#version"}>
+                                <CommandItem>
+                                    <RocketIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Version</span>
+                                </CommandItem>
+                            </Link>
                         </CommandGroup>
                     </CommandList>
                 </CommandDialog>
@@ -102,7 +173,7 @@ export function NavBar() {
                                         <span className="sr-only">Open Documentation</span>
                                     </Button>
                                 </SheetTrigger>
-                                <SheetContent>
+                                <SheetContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                                     <SheetHeader>
                                         <SheetTitle>Documentation</SheetTitle>
                                         <SheetDescription>
@@ -121,10 +192,19 @@ export function NavBar() {
                                         <span className="sr-only">Toggle theme</span>
                                     </Button>
                                 </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+                                <DropdownMenuContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
+                                    <DropdownMenuItem onClick={() => setTheme("light")}>
+                                        <SunIcon className="mr-2 h-4 w-4" />
+                                        <span className="font-inter">Light</span>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => setTheme("dark")}>
+                                        <MoonIcon className="mr-2 h-4 w-4" />
+                                        <span className="font-inter">Dark</span>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => setTheme("system")}>
+                                        <LaptopIcon className="mr-2 h-4 w-4" />
+                                        <span className="font-inter">System</span>
+                                    </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </div>
@@ -174,12 +254,27 @@ export function NavBar() {
                                 <DropdownMenuTrigger className="md:hidden visible">
                                     <li className="py-3 rounded-lg dark:bg-zinc-700 bg-slate-300 md:dark:bg-transparent  p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge md:text-base transition duration-300 ease-in-out text-lg">
                                         <p className="text-left">Templates</p>
-                                        <DropdownMenuContent>
+                                        <DropdownMenuContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                                             <DropdownMenuLabel>Available templates</DropdownMenuLabel>
                                             <DropdownMenuSeparator />
-                                            <Link href={"/dashboard"}><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
-                                            <Link href={"/pricing-page"}><DropdownMenuItem>Pricing page</DropdownMenuItem></Link>
-                                            <Link href={"/blog-post"}><DropdownMenuItem>Blog post</DropdownMenuItem></Link>
+                                            <Link href={"/dashboard"}>
+                                                <DropdownMenuItem>
+                                                    <CalendarIcon className="mr-2 h-4 w-4" />
+                                                    <span className="font-inter">Dashboard</span>
+                                                </DropdownMenuItem>
+                                            </Link>
+                                            <Link href={"/pricing-page"}>
+                                                <DropdownMenuItem>
+                                                    <IdCardIcon className="mr-2 h-4 w-4" />
+                                                    <span className="font-inter">Pricing page</span>
+                                                </DropdownMenuItem>
+                                            </Link>
+                                            <Link href={"/blog-post"}>
+                                                <DropdownMenuItem>
+                                                    <ReaderIcon className="mr-2 h-4 w-4" />
+                                                    <span className="font-inter">Blog post</span>
+                                                </DropdownMenuItem>
+                                            </Link>
                                         </DropdownMenuContent>
                                     </li>
                                 </DropdownMenuTrigger>
@@ -207,7 +302,7 @@ export function NavBar() {
                                                 <span className="sr-only">Open Templates</span>
                                             </Button>
                                         </SheetTrigger>
-                                        <SheetContent>
+                                        <SheetContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                                             <SheetHeader>
                                                 <SheetTitle className="flex justify-center text-xl"><Link href={"/docs"}>Documentation</Link></SheetTitle>
                                                 <SheetDescription>
@@ -227,12 +322,27 @@ export function NavBar() {
                                                 <span className="sr-only">Open Templates</span>
                                             </Button>
                                         </DropdownMenuTrigger>
-                                        <DropdownMenuContent>
+                                        <DropdownMenuContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                                             <DropdownMenuLabel>Available templates</DropdownMenuLabel>
                                             <DropdownMenuSeparator />
-                                            <Link href={"/dashboard"}><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
-                                            <Link href={"/pricing-page"}><DropdownMenuItem>Pricing page</DropdownMenuItem></Link>
-                                            <Link href={"/blog-post"}><DropdownMenuItem>Blog post</DropdownMenuItem></Link>
+                                            <Link href={"/dashboard"}>
+                                                <DropdownMenuItem>
+                                                    <CalendarIcon className="mr-2 h-4 w-4" />
+                                                    <span className="font-inter">Dashboard</span>
+                                                </DropdownMenuItem>
+                                            </Link>
+                                            <Link href={"/pricing-page"}>
+                                                <DropdownMenuItem>
+                                                    <IdCardIcon className="mr-2 h-4 w-4" />
+                                                    <span className="font-inter">Pricing page</span>
+                                                </DropdownMenuItem>
+                                            </Link>
+                                            <Link href={"/blog-post"}>
+                                                <DropdownMenuItem>
+                                                    <ReaderIcon className="mr-2 h-4 w-4" />
+                                                    <span className="font-inter">Blog post</span>
+                                                </DropdownMenuItem>
+                                            </Link>
                                         </DropdownMenuContent>
                                     </DropdownMenu>
                                 </div>
@@ -246,10 +356,19 @@ export function NavBar() {
                                             <span className="sr-only">Toggle theme</span>
                                         </Button>
                                     </DropdownMenuTrigger>
-                                    <DropdownMenuContent>
-                                        <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-                                        <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-                                        <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+                                    <DropdownMenuContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
+                                        <DropdownMenuItem onClick={() => setTheme("light")}>
+                                            <SunIcon className="mr-2 h-4 w-4" />
+                                            <span className="font-inter">Light</span>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => setTheme("dark")}>
+                                            <MoonIcon className="mr-2 h-4 w-4" />
+                                            <span className="font-inter">Dark</span>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => setTheme("system")}>
+                                            <LaptopIcon className="mr-2 h-4 w-4" />
+                                            <span className="font-inter">System</span>
+                                        </DropdownMenuItem>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
                             </li>

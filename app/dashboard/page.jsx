@@ -8,6 +8,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { DownloadIcon, InfoCircledIcon, LapTimerIcon } from "@radix-ui/react-icons";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -75,11 +81,26 @@ export default function Dashboard() {
     },
   ]
   const [selectedColor, setSelectedColor] = useState(null);
-  const [textColor, setTextColor] = useState("#CEC6C6");
-  const [bgColor, setBgColor] = useState("#6676A1");
-  const [primaryColor, setPrimaryColor] = useState("#8f8fff");
-  const [secondaryColor, setSecondaryColor] = useState("#cec6c6");
-  const [accentColor, setAccentColor] = useState("#000");
+  const [textColor, setTextColor] = useState("#1F1F21");
+  const [bgColor, setBgColor] = useState("#E6EFEF");
+  const [primaryColor, setPrimaryColor] = useState("#253A55");
+  const [secondaryColor, setSecondaryColor] = useState("#0077b6");
+  const [accentColor, setAccentColor] = useState("#CCD2D7");
+
+  const DownloadFile = () => {
+    const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;;
+
+    const blob = new Blob([textContent], { type: 'text/plain' });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'HueCraftColors.txt';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
 
   const applyColor = (color, type) => {
     document.body.style.setProperty("--bg-color", bgColor);
@@ -140,9 +161,9 @@ export default function Dashboard() {
                   <AvatarImage src="https://github.com/git-Abdul.png" />
                   <AvatarFallback className="text-sm font-inter font-bold dark:text-white text-black">AV</AvatarFallback>
                 </Avatar>
-                <Button style={{ backgroundColor: primaryColor }} variant="secondary">Actions</Button>
-                <Button variant="secondary">GitHub</Button>
-                <Button variant="secondary">Security</Button>
+                <Button style={{ backgroundColor: primaryColor, color: accentColor }} variant="secondary">Actions</Button>
+                <Button variant="secondary" className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">GitHub</Button>
+                <Button variant="secondary" className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">Security</Button>
               </div>
             </Card>
           </CardTitle>
@@ -228,7 +249,7 @@ export default function Dashboard() {
       {/* MenuBar */}
       <div className="text-center items-center justify-center flex invisible md:visible">
         <div className="flex justify-center gap-2 font-poppins backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
-          {/* Color buttons */} 
+          {/* Color buttons */}
           <Button
             className="py-6 px-7 text-md dark:text-white text-black"
             style={{ backgroundColor: "#202020", color: "#fff" }}
@@ -267,6 +288,25 @@ export default function Dashboard() {
 
           {/* Theme dropdown */}
           <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
+          <HoverCard className="font-inter">
+            <Button
+              className="-mt-3 pr-10 pl-6 text-md"
+              size="icon"
+              variant="link"
+              onClick={DownloadFile}
+            >
+              <HoverCardTrigger>
+                <DownloadIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
+              </HoverCardTrigger>
+              <HoverCardContent className="font-inter backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+                <div className="flex justify-normal">
+                  <InfoCircledIcon />
+                  <p className="font-medium">Click this to download your colors.</p>
+                </div>
+              </HoverCardContent>
+            </Button>
+          </HoverCard>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
@@ -275,9 +315,15 @@ export default function Dashboard() {
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => applyColor("light")}>Light</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => applyColor("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuContent className="backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                <SunIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Light</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <MoonIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Dark</span>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

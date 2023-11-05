@@ -7,6 +7,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { DownloadIcon, InfoCircledIcon, LapTimerIcon } from "@radix-ui/react-icons";
 import { ArchiveIcon, BarChartIcon, EnvelopeOpenIcon, FaceIcon, MoonIcon, RocketIcon, SunIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { ChromePicker } from "react-color";
@@ -15,11 +21,26 @@ import { NavBar } from "@/components/navBar"
 export default function Pricing() {
   const { setTheme } = useTheme();
   const [selectedColor, setSelectedColor] = useState(null);
-  const [textColor, setTextColor] = useState("#000");
-  const [bgColor, setBgColor] = useState("#F9EADC");
-  const [primaryColor, setPrimaryColor] = useState("#237ECD");
-  const [secondaryColor, setSecondaryColor] = useState("#D7BEF4");
-  const [accentColor, setAccentColor] = useState("#5C5757");
+  const [textColor, setTextColor] = useState("#fff");
+  const [bgColor, setBgColor] = useState("#219ebc");
+  const [primaryColor, setPrimaryColor] = useState("#023e8a");
+  const [secondaryColor, setSecondaryColor] = useState("#0077b6");
+  const [accentColor, setAccentColor] = useState("#132C32");
+
+  const DownloadFile = () => {
+    const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;;
+
+    const blob = new Blob([textContent], { type: 'text/plain' });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'HueCraftColors.txt';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
 
   const applyColor = (color, type) => {
     document.body.style.setProperty("--bg-color", bgColor);
@@ -360,6 +381,25 @@ export default function Pricing() {
 
           {/* Theme dropdown */}
           <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
+          <HoverCard className="font-inter">
+            <Button
+              className="-mt-3 pr-10 pl-6 text-md"
+              size="icon"
+              variant="link"
+              onClick={DownloadFile}
+            >
+              <HoverCardTrigger>
+                <DownloadIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
+              </HoverCardTrigger>
+              <HoverCardContent className="font-inter backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+                <div className="flex justify-normal">
+                  <InfoCircledIcon />
+                  <p className="font-medium">Click this to download your colors.</p>
+                </div>
+              </HoverCardContent>
+            </Button>
+          </HoverCard>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
@@ -368,9 +408,15 @@ export default function Pricing() {
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => applyColor("light")}>Light</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => applyColor("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuContent className="backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                <SunIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Light</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <MoonIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Dark</span>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

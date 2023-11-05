@@ -4,7 +4,13 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { ChromePicker } from "react-color";
 import { NavBar } from "@/components/navBar";
-import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { SunIcon, MoonIcon, TwitterLogoIcon, InfoCircledIcon } from "@radix-ui/react-icons";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { DownloadIcon, LapTimerIcon } from "@radix-ui/react-icons";
 import {
   Card,
   CardContent,
@@ -19,10 +25,25 @@ export default function Page() {
   const { setTheme } = useTheme();
   const [selectedColor, setSelectedColor] = useState(null);
   const [textColor, setTextColor] = useState("#000");
-  const [bgColor, setBgColor] = useState("#F9EADC");
-  const [primaryColor, setPrimaryColor] = useState("#237ECD");
-  const [secondaryColor, setSecondaryColor] = useState("#D7BEF4");
-  const [accentColor, setAccentColor] = useState("#000");
+  const [bgColor, setBgColor] = useState("#EBF0F3");
+  const [primaryColor, setPrimaryColor] = useState("#023e8a");
+  const [secondaryColor, setSecondaryColor] = useState("#0F90CA");
+  const [accentColor, setAccentColor] = useState("#0096c7");
+
+  const DownloadFile = () => {
+    const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;;
+
+    const blob = new Blob([textContent], { type: 'text/plain' });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'HueCraftColors.txt';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
 
   const applyColor = (color, type) => {
     if (type === "text") {
@@ -61,7 +82,7 @@ export default function Page() {
   return (
     <main>
       <NavBar />
-      <Card className="p-10 mt-20 md:mx-10 mx-2 mb-10" style={{ backgroundColor: bgColor }}>
+      <Card className="md:p-10 p-3 mt-20 md:mx-10 mx-2 mb-10" style={{ backgroundColor: bgColor }}>
         <CardTitle><h1 style={{ color: textColor }} className="lg:text-7xl md:texl-5xl text-5xl font-bold font-bridge text-center md:mt-10 mt-5">Exclusive Blog Content</h1></CardTitle>
         <CardDescription><h1 className="text-center mt-2 text-lg font-inter font-medium">Content for content lovers, color testers, and font enthusiasts.</h1></CardDescription>
         <div className="flex justify-center items-center">
@@ -72,16 +93,16 @@ export default function Page() {
             }}
           ></div>
         </div>
-        <div className="text-left">
-            <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2 mt-10">"Exploring the Wonders of Underwater Photography"</h1>
-            <p className="font-medium font-inter md:m-10 text-xl m-2">Have you ever wondered what lies beneath the surface of the world's oceans, seas, and rivers? The underwater world is a mesmerizing realm, filled with stunning marine life, colorful coral reefs, and mysterious shipwrecks. For those with a passion for both photography and the deep blue, underwater photography is a fascinating and rewarding pursuit.</p>
-            <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2">Capturing the Beauty Below</h1>
-            <p className="font-medium font-inter md:m-10 text-xl m-2">Underwater photography allows us to document the beauty and diversity of aquatic life, and it provides a unique perspective that's unlike any other form of photography. From the tranquil elegance of a sea turtle gliding through crystal-clear waters to the vibrant, alien-like colors of a coral reef teeming with fish, underwater photography enables us to glimpse a world that's often hidden from view.</p>
-            <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2">The Essentials of Underwater Photography</h1>
-            <p className="font-medium font-inter md:m-10 text-xl m-2">Before embarking on your underwater photography journey, there are some essential tools and techniques to consider. Waterproof camera housings, specialized lenses, and proper lighting equipment are just a few of the items that can make a significant difference in the quality of your underwater shots. Additionally, mastering buoyancy control and understanding the unique challenges of shooting underwater are crucial skills for any aspiring underwater photographer.</p>
-            <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2">Conclusion</h1>
-            <p className="font-medium font-inter md:m-10 text-xl m-2">Underwater photography is a captivating and challenging niche within the photography world. It allows us to capture the wonders of the underwater world and promote marine conservation. If you're passionate about both photography and the oceans, consider taking the plunge into the world of underwater photography. It's an opportunity to explore a new dimension of art and nature while contributing to the preservation of our planet's most precious resource.</p>
-            <Button className="mx-10 m-2 text-xl font-inter py-8 px-6 font-bold transition ease-in-out hover:scale-110" style={{backgroundColor: secondaryColor, color: textColor}}>Share this on Twitter</Button>
+        <div className="text-left" style={{ color: textColor }}>
+          <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2 mt-10">"Exploring the Wonders of Underwater Photography"</h1>
+          <p className="font-medium font-inter md:m-10 text-xl m-2">Have you ever wondered what lies beneath the surface of the world's oceans, seas, and rivers? The underwater world is a mesmerizing realm, filled with stunning marine life, colorful coral reefs, and mysterious shipwrecks. For those with a passion for both photography and the deep blue, underwater photography is a fascinating and rewarding pursuit.</p>
+          <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2">Capturing the Beauty Below</h1>
+          <p className="font-medium font-inter md:m-10 text-xl m-2">Underwater photography allows us to document the beauty and diversity of aquatic life, and it provides a unique perspective that's unlike any other form of photography. From the tranquil elegance of a sea turtle gliding through crystal-clear waters to the vibrant, alien-like colors of a coral reef teeming with fish, underwater photography enables us to glimpse a world that's often hidden from view.</p>
+          <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2">The Essentials of Underwater Photography</h1>
+          <p className="font-medium font-inter md:m-10 text-xl m-2">Before embarking on your underwater photography journey, there are some essential tools and techniques to consider. Waterproof camera housings, specialized lenses, and proper lighting equipment are just a few of the items that can make a significant difference in the quality of your underwater shots. Additionally, mastering buoyancy control and understanding the unique challenges of shooting underwater are crucial skills for any aspiring underwater photographer.</p>
+          <h1 className="font-bold text-3xl italic font-bridge md:m-10 m-2">Conclusion</h1>
+          <p className="font-medium font-inter md:m-10 text-xl m-2">Underwater photography is a captivating and challenging niche within the photography world. It allows us to capture the wonders of the underwater world and promote marine conservation. If you're passionate about both photography and the oceans, consider taking the plunge into the world of underwater photography. It's an opportunity to explore a new dimension of art and nature while contributing to the preservation of our planet's most precious resource.</p>
+          <Button className="mx-10 m-2 text-xl font-inter py-8 px-6 font-bold transition ease-in-out hover:scale-110" style={{ backgroundColor: secondaryColor, color: textColor }}><span><TwitterLogoIcon className="w-6 h-6 mr-3" /></span> Share this on Twitter</Button>
         </div>
       </Card>
       <br />
@@ -130,6 +151,25 @@ export default function Page() {
 
           {/* Theme dropdown */}
           <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
+          <HoverCard className="font-inter">
+            <Button
+              className="-mt-3 pr-10 pl-6 text-md"
+              size="icon"
+              variant="link"
+              onClick={DownloadFile}
+            >
+              <HoverCardTrigger>
+                <DownloadIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
+              </HoverCardTrigger>
+              <HoverCardContent className="font-inter backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+                <div className="flex justify-normal">
+                  <InfoCircledIcon />
+                  <p className="font-medium">Click this to download your colors.</p>
+                </div>
+              </HoverCardContent>
+            </Button>
+          </HoverCard>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
@@ -138,9 +178,15 @@ export default function Page() {
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => applyColor("light")}>Light</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => applyColor("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuContent className="backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                <SunIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Light</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <MoonIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Dark</span>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

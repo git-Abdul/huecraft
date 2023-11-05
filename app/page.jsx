@@ -2,10 +2,14 @@
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { ArrowRightIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon, CaretUpIcon, DownloadIcon, InfoCircledIcon, LapTimerIcon, LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { ChromePicker } from "react-color";
 import { Rays } from "@/components/Rays";
-
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -37,6 +41,21 @@ export default function Home() {
   const [primaryColor, setPrimaryColor] = useState("#023e8a");
   const [secondaryColor, setSecondaryColor] = useState("#0077b6");
   const [accentColor, setAccentColor] = useState("#0096c7");
+
+  const DownloadFile = () => {
+    const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;;
+
+    const blob = new Blob([textContent], { type: 'text/plain' });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'HueCraftColors.txt';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
 
   const applyColor = (color, type) => {
     document.body.style.setProperty("--bg-color", bgColor);
@@ -90,15 +109,13 @@ export default function Home() {
           <div className="md:ml-20 mt-6">
             <AlertDialog>
               <AlertDialogTrigger>
-
-                <Badge className="ml-1 px-4 py-1 font-medium dark:bg-zinc-800 bg-slate-300" variant="outline"><div className="flex justify-normal"><p className="mr-2">✨ New update released</p> <ArrowRightIcon className="mt-[1px]" /></div></Badge>
-
+                <Badge className="ml-1 px-4 py-1 font-medium font-inter border-zinc-700 backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30" variant="outline"><div className="flex justify-normal"><p className="mr-2">✨ New update released</p> <ArrowRightIcon className="mt-[1px]" /></div></Badge>
               </AlertDialogTrigger>
-              <AlertDialogContent>
+              <AlertDialogContent className="select-none backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                 <AlertDialogHeader>
-                  <AlertDialogTitle>✨ New update! v1.1</AlertDialogTitle>
+                  <AlertDialogTitle>✨ New update! v1.2</AlertDialogTitle>
                   <AlertDialogDescription>
-                    Second most stable release after the main release. It brings new metadata changes, changes to embeds around other platforms, and fixes bugs that were left unoticed.
+                    This is the next major update. It adds the feature for downloading the selected colors in a txt file, Brings changes to the home page and the command menu. It also adds mica material to most UI elements. More info in the changelog:
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -127,7 +144,7 @@ export default function Home() {
             <button className="shadow-2xl bg-zinc-800 shadow-blue-500 font-poppins font-smedium drop-shadow-2xl dark:text-white text-white hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Get started</button>
           </Link>
           <Link href={"/docs"}>
-            <button className="border font-medium dark:border-zinc-700 dark:hover:border-zinc-800 border-slate-500 hover:border-slate-600 dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200">Documentation</button>
+            <button className="border font-inter font-medium dark:border-zinc-700 dark:hover:border-zinc-800 border-slate-500 hover:border-slate-600 dark:text-white text-black hover:-translate-y-1 hover:scale-110 rounded-lg py-3 px-4 transition ease-in-out duration-200 backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">Documentation</button>
           </Link>
         </div>
       </div>
@@ -192,6 +209,25 @@ export default function Home() {
 
           {/* Theme dropdown */}
           <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
+          <HoverCard className="font-inter">
+            <Button
+              className="-mt-3 pr-10 pl-6 text-md"
+              size="icon"
+              variant="link"
+              onClick={DownloadFile}
+            >
+              <HoverCardTrigger>
+                <DownloadIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
+              </HoverCardTrigger>
+              <HoverCardContent className="font-inter backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+                <div className="flex justify-normal">
+                  <InfoCircledIcon />
+                  <p className="font-medium">Click this to download your colors.</p>
+                </div>
+              </HoverCardContent>
+            </Button>
+          </HoverCard>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
@@ -200,9 +236,15 @@ export default function Home() {
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => applyColor("light")}>Light</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => applyColor("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuContent className="backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                <SunIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Light</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <MoonIcon className="mr-2 h-4 w-4" />
+                <span className="font-inter">Dark</span>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
