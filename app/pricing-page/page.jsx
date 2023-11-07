@@ -19,13 +19,12 @@ import { ChromePicker } from "react-color";
 import { NavBar } from "@/components/navBar"
 
 export default function Pricing() {
-  const { setTheme } = useTheme();
   const [selectedColor, setSelectedColor] = useState(null);
-  const [textColor, setTextColor] = useState("#fff");
-  const [bgColor, setBgColor] = useState("#219ebc");
-  const [primaryColor, setPrimaryColor] = useState("#023e8a");
-  const [secondaryColor, setSecondaryColor] = useState("#0077b6");
-  const [accentColor, setAccentColor] = useState("#132C32");
+  const [textColor, setTextColor] = useState("#202020");
+  const [bgColor, setBgColor] = useState("#FFFAEB");
+  const [primaryColor, setPrimaryColor] = useState("#FF8400");
+  const [secondaryColor, setSecondaryColor] = useState("#FFF5D6");
+  const [accentColor, setAccentColor] = useState("#CF4307");
 
   const DownloadFile = () => {
     const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;;
@@ -82,365 +81,367 @@ export default function Pricing() {
     setSelectedColor(null);
   };
   return (
-    <main>
-      <NavBar />
+    <body style={{ backgroundColor: bgColor }}>
+      <main>
+        <NavBar />
 
-      <h1 className="select-none text-center text-4xl mt-32 sm:mb-142 md:mb-0 lg:mb-0 font-inter font-bold">Plans and Pricing</h1>
-      <section className="font-inter select-none min-h-screen w-full flex items-center justify-center">
-        <div className="container px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-3 md:gap-8">
-            <div style={{ backgroundColor: bgColor, color: textColor }} className="flex flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-850 justify-between border border-gray-300">
-              <div>
-                <h3 className="text-2xl font-bold text-center">Basic</h3>
-                <div className="mt-4 text-center" style={{ color: accentColor }}>
-                  <span className="text-4xl font-bold">$29</span>/ month
+        <h1 style={{ color: textColor }} className="select-none text-center md:text-6xl text-4xl mb-10 md:mb-0 mt-32 sm:mb-142 md:mb-0 lg:mb-0 font-inter font-bold">Plans and Pricing</h1>
+        <section className="font-inter select-none min-h-screen w-full flex items-center justify-center">
+          <div className="container px-4 md:px-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+              <div style={{ backgroundColor: secondaryColor, color: textColor }} className="flex flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-850 justify-between border border-gray-300">
+                <div>
+                  <h3 className="text-2xl font-bold text-center">Basic</h3>
+                  <div className="mt-4 text-center" style={{ color: accentColor }}>
+                    <span className="text-4xl font-bold">$29</span>/ month
+                  </div>
+                  <ul className="mt-4 space-y-2">
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className="text-xs"
+                          style={{ color: secondaryColor }}
+                          fill="none"
+                          height="24"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Monthly sneaker box delivered
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Upto 5% Off on all our products
+                    </li>
+                  </ul>
                 </div>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className="text-xs"
-                        style={{ color: secondaryColor }}
-                        fill="none"
-                        height="24"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Monthly sneaker box delivered
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Upto 5% Off on all our products
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-6">
-                <Button className="w-full" style={{ backgroundColor: primaryColor }}>Get Started</Button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: bgColor, borderColor: primaryColor, color: textColor }} className="relative flex flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-850 justify-between border">
-              <div style={{ background: `linear-gradient(to right, ${primaryColor}, ${secondaryColor})` }} className="px-3 py-1 text-sm text-black rounded-full inline-block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                Popular
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-center">Pro</h3>
-                <div style={{ color: accentColor }} className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
-                  <span className="text-4xl font-bold">$59</span>/ month
+                <div className="mt-6">
+                  <Button className="w-full" style={{ backgroundColor: primaryColor }}>Get Started</Button>
                 </div>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Monthly sneaker box delivered
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Merchandise included
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Upto 10% Off on all our products
-                  </li>
-                </ul>
               </div>
-              <div className="mt-6">
-                <Button style={{ background: `linear-gradient(to right, ${primaryColor}, ${secondaryColor})` }} className="w-full text-black">Get Started</Button>
-              </div>
-            </div>
-            <div style={{ backgroundColor: bgColor, color: textColor }} className="flex flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-850 justify-between border border-gray-300">
-              <div>
-                <h3 className="text-2xl font-bold text-center">Enterprise</h3>
-                <div style={{ color: accentColor }} className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
-                  <span className="text-4xl font-bold">$99</span>/ month
+              <div style={{ backgroundColor: secondaryColor, borderColor: primaryColor, color: textColor }} className="relative flex flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-850 justify-between border">
+                <div style={{ background: `linear-gradient(to right, ${primaryColor}, ${secondaryColor})` }} className="px-3 py-1 text-sm text-black rounded-full inline-block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  Popular
                 </div>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Monthly sneaker box delivered
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Merchandise included
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Upto 20% Off on all our products
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Sneaker Collaboration
-                  </li>
-                  <li className="flex items-center">
-                    <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
-                      <svg
-                        className=" text-white text-xs"
-                        fill="none"
-                        height="24"
-                        style={{ color: secondaryColor }}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                    Dedicated Support and Warranty
-                  </li>
-                </ul>
+                <div>
+                  <h3 className="text-2xl font-bold text-center">Pro</h3>
+                  <div style={{ color: accentColor }} className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
+                    <span className="text-4xl font-bold">$59</span>/ month
+                  </div>
+                  <ul className="mt-4 space-y-2">
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Monthly sneaker box delivered
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Merchandise included
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Upto 10% Off on all our products
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-6">
+                  <Button style={{ background: `linear-gradient(to right, ${primaryColor}, ${secondaryColor})` }} className="w-full text-black">Get Started</Button>
+                </div>
               </div>
-              <div className="mt-6">
-                <Button style={{ backgroundColor: primaryColor }} className="w-full">Get Started</Button>
+              <div style={{ backgroundColor: secondaryColor, color: textColor }} className="flex flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-850 justify-between border border-gray-300">
+                <div>
+                  <h3 className="text-2xl font-bold text-center">Enterprise</h3>
+                  <div style={{ color: accentColor }} className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
+                    <span className="text-4xl font-bold">$99</span>/ month
+                  </div>
+                  <ul className="mt-4 space-y-2">
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Monthly sneaker box delivered
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Merchandise included
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Upto 20% Off on all our products
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Sneaker Collaboration
+                    </li>
+                    <li className="flex items-center">
+                      <span className="rounded-full mr-2 p-1" style={{ backgroundColor: primaryColor }}>
+                        <svg
+                          className=" text-white text-xs"
+                          fill="none"
+                          height="24"
+                          style={{ color: secondaryColor }}
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      Dedicated Support and Warranty
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-6">
+                  <Button style={{ backgroundColor: primaryColor }} className="w-full">Get Started</Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <br />
-      <br />
-      <br />
-      <br />
+        </section>
+        <br />
+        <br />
+        <br />
+        <br />
 
-      {/* MenuBar */}
-      <div className="text-center items-center justify-center flex invisible md:visible">
-        <div className="flex justify-center gap-2 font-poppins backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
-          {/* Color buttons */}
-          <Button
-            className="py-6 px-7 text-md dark:text-white text-black"
-            style={{ backgroundColor: "#202020", color: "#fff" }}
-            onClick={() => setSelectedColor("text")}
-          >
-            Text
-          </Button>
-          <Button
-            className="py-6 px-7 text-md dark:text-white"
-            style={{ backgroundColor: bgColor }}
-            onClick={() => setSelectedColor("bg")}
-          >
-            Background
-          </Button>
-          <Button
-            className="py-6 px-7 text-md dark:text-white"
-            style={{ backgroundColor: primaryColor }}
-            onClick={() => setSelectedColor("primary")}
-          >
-            Primary
-          </Button>
-          <Button
-            className="py-6 px-7 text-md dark:text-white"
-            style={{ backgroundColor: secondaryColor }}
-            onClick={() => setSelectedColor("secondary")}
-          >
-            Secondary
-          </Button>
-          <Button
-            className="py-6 px-7 text-md dark:text-white"
-            style={{ backgroundColor: accentColor }}
-            onClick={() => setSelectedColor("accent")}
-          >
-            Accent
-          </Button>
-
-          {/* Theme dropdown */}
-          <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
-          <HoverCard className="font-inter">
+        {/* MenuBar */}
+        <div className="text-center items-center justify-center flex invisible md:visible">
+          <div className="flex justify-center gap-2 font-poppins backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 mx-32 p-5 fixed mt-20 bottom-0 mb-5 rounded-lg" style={{ zIndex: "5" }}>
+            {/* Color buttons */}
             <Button
-              className="-mt-3 pr-10 pl-6 text-md"
-              size="icon"
-              variant="link"
-              onClick={DownloadFile}
+              className="py-6 px-7 text-md dark:text-white text-black"
+              style={{ backgroundColor: "#202020", color: "#fff" }}
+              onClick={() => setSelectedColor("text")}
             >
-              <HoverCardTrigger>
-                <DownloadIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
-              </HoverCardTrigger>
-              <HoverCardContent className="font-inter backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
-                <div className="flex justify-normal">
-                  <InfoCircledIcon />
-                  <p className="font-medium">Click this to download your colors.</p>
-                </div>
-              </HoverCardContent>
+              Text
             </Button>
-          </HoverCard>
+            <Button
+              className="py-6 px-7 text-md dark:text-white"
+              style={{ backgroundColor: bgColor }}
+              onClick={() => setSelectedColor("bg")}
+            >
+              Background
+            </Button>
+            <Button
+              className="py-6 px-7 text-md dark:text-white"
+              style={{ backgroundColor: primaryColor }}
+              onClick={() => setSelectedColor("primary")}
+            >
+              Primary
+            </Button>
+            <Button
+              className="py-6 px-7 text-md dark:text-white"
+              style={{ backgroundColor: secondaryColor }}
+              onClick={() => setSelectedColor("secondary")}
+            >
+              Secondary
+            </Button>
+            <Button
+              className="py-6 px-7 text-md dark:text-white"
+              style={{ backgroundColor: accentColor }}
+              onClick={() => setSelectedColor("accent")}
+            >
+              Accent
+            </Button>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
-                <SunIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <MoonIcon className="absolute h-[2rem] w-[2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span className="sr-only">Toggle theme</span>
+            {/* Theme dropdown */}
+            <hr className="w-0.5 rounded-lg h-12 bg-gray-400" />
+            <HoverCard className="font-inter">
+              <Button
+                className="-mt-3 pr-10 pl-6 text-md"
+                size="icon"
+                variant="link"
+                onClick={DownloadFile}
+              >
+                <HoverCardTrigger>
+                  <DownloadIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
+                </HoverCardTrigger>
+                <HoverCardContent className="font-inter backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+                  <div className="flex justify-normal">
+                    <InfoCircledIcon />
+                    <p className="font-medium">Click this to download your colors.</p>
+                  </div>
+                </HoverCardContent>
               </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
-              <DropdownMenuItem onClick={() => setTheme("light")}>
-                <SunIcon className="mr-2 h-4 w-4" />
-                <span className="font-inter">Light</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>
-                <MoonIcon className="mr-2 h-4 w-4" />
-                <span className="font-inter">Dark</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </div>
+            </HoverCard>
 
-      {selectedColor && (
-        <div className="p-3 rounded-lg backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30" style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200" }}>
-          <ChromePicker
-            color={
-              selectedColor === "text"
-                ? textColor
-                : selectedColor === "bg"
-                  ? bgColor
-                  : selectedColor === "primary"
-                    ? primaryColor
-                    : selectedColor === "secondary"
-                      ? secondaryColor
-                      : accentColor
-            }
-            onChange={(color) => handleColorChange(color, selectedColor)}
-          />
-          <Button variant="secondary" onClick={handleCloseColorPicker} className="mt-2">Close</Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
+                  <SunIcon className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <MoonIcon className="absolute h-[2rem] w-[2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="backdrop-blur-lg bg-white/50 dark:bg-zinc-900/30">
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                  <SunIcon className="mr-2 h-4 w-4" />
+                  <span className="font-inter">Light</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                  <MoonIcon className="mr-2 h-4 w-4" />
+                  <span className="font-inter">Dark</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
-      )}
-    </main>
+
+        {selectedColor && (
+          <div className="p-3 rounded-lg backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30" style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200" }}>
+            <ChromePicker
+              color={
+                selectedColor === "text"
+                  ? textColor
+                  : selectedColor === "bg"
+                    ? bgColor
+                    : selectedColor === "primary"
+                      ? primaryColor
+                      : selectedColor === "secondary"
+                        ? secondaryColor
+                        : accentColor
+              }
+              onChange={(color) => handleColorChange(color, selectedColor)}
+            />
+            <Button variant="secondary" onClick={handleCloseColorPicker} className="mt-2">Close</Button>
+          </div>
+        )}
+      </main>
+    </body>
   )
 }

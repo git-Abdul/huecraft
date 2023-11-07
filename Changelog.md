@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Major Release 1.3] - 7/11/23
+
+### Changes & Improvements: 
+- More color customization, can change background of websites.
+- Website default color pallete changed.
+- Made UI elements to incorporate the color pallete.
+- Changes to home page on mobile (drastic change) and Desktop (mild changes to fonts).
+- Added color picker to docs page.
+
+<hr>
+
 ## [Major Release 1.2] - 5/11/23
 
 ### Added:

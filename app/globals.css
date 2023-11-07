@@ -10,6 +10,11 @@ body {
     background-color: var(--bg-color);
 }
 
+.font-effect {
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+}
+
 .para-container {
     max-width: 900px;
     overflow-y: auto;

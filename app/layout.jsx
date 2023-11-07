@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <meta content="#14b6a4" data-react-helmet="true" name="theme-color" />
         <link rel="icon" href="favicon.png" type='png' sizes="any" />
       </head>
-      <body className="bg-light dark:bg-dark">
+      <body className="bg-light dark:bg-dark select-none">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

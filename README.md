@@ -1,9 +1,9 @@
 # HueCraft - A place to visualize your designs.
-## Everything's present in the [Documentation](https://git-Abdul.github.io/huecraft/docs)
+## Everything is present in the [Documentation](https://git-Abdul.github.io/huecraft/docs)
 <hr>
-<img src="./public/thumb-light.png">
-<img src="./public/thumb-dark.png">
-<img src="./public/dashboard-l.png">
-<img src="./public/dashboard-d.png">
-<img src="./public/colorPicker.png">
+<img src="./public/thumbnail.png">
+<img src="./public/docs.png">
+<img src="./public/dashboard.pngpng">
+<img src="./public/pricing.png">
+<img src="./public/blog.png">
 <hr>
