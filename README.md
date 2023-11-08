@@ -3,7 +3,7 @@
 <hr>
 <img src="./public/thumbnail.png">
 <img src="./public/docs.png">
-<img src="./public/dashboard.pngpng">
+<img src="./public/dashboard.png">
 <img src="./public/pricing.png">
 <img src="./public/blog.png">
 <hr>
