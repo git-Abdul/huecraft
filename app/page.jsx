@@ -92,7 +92,7 @@ export default function Home() {
               <div className="rounded-lg w-36 md:h-44 h-20" style={{ backgroundColor: accentColor }}></div>
               <div className="rounded-md w-4 md:h-44 h-20" style={{ backgroundColor: textColor }}></div>
               <div className="rounded-lg w-48 md:h-44 h-20" style={{ backgroundColor: secondaryColor }}></div>
-              <div className="rounded-lg w-72 md:h-24 h-20" style={{ backgroundColor: primaryColor }}></div>
+              <div className="rounded-lg w-72 md:h-44 h-20" style={{ backgroundColor: primaryColor }}></div>
               <div className="rounded-lg w-40 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: bgColor }}></div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Home() {
             <div className="md:ml-20 mt-6 mb-5">
               <AlertDialog>
                 <AlertDialogTrigger>
-                  <Badge style={{ border: `1px solid ${accentColor}` }} className="ml-1 px-4 py-1 font-medium font-inter backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30" variant="outline"><div className="flex justify-normal"><p style={{ color: textColor }} className="mr-2">✨ New: Customization, colors, UI changes and more</p> <ArrowRightIcon style={{ color: primaryColor }} className="mt-[1px]" /></div></Badge>
+                  <Badge style={{ border: `1px solid ${accentColor}` }} className="ml-1 px-4 py-1 font-medium font-inter backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30" variant="outline"><div className="flex justify-normal"><p style={{ color: textColor }} className="mr-2">✨ New: Website embeds and Home screen tweaks</p> <ArrowRightIcon style={{ color: primaryColor }} className="mt-[1px]" /></div></Badge>
                 </AlertDialogTrigger>
                 <AlertDialogContent style={{ backgroundColor: bgColor, backdropFilter: "blur(20px)" }} className="select-none">
                   <AlertDialogHeader>
@@ -153,7 +153,7 @@ export default function Home() {
             <div className="rounded-lg w-36 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: accentColor }}></div>
             <div className="rounded-md w-4 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: textColor }}></div>
             <div className="rounded-lg w-48 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: secondaryColor }}></div>
-            <div className="rounded-lg w-72 md:h-24 h-20 shadow-2xl" style={{ backgroundColor: primaryColor }}></div>
+            <div className="rounded-lg w-72 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: primaryColor }}></div>
             <div className="rounded-lg w-40 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: bgColor }}></div>
           </div>
         </div>

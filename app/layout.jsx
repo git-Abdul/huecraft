@@ -18,7 +18,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="#14b6a4" data-react-helmet="true" name="theme-color" />
+        <meta content="https://git-abdul.github.io/huecraft/favicon.png" property="og:image" />
+        <meta content="#ff8400" data-react-helmet="true" name="theme-color" />
         <link rel="icon" href="favicon.png" type='png' sizes="any" />
       </head>
       <body className="bg-light dark:bg-dark select-none">

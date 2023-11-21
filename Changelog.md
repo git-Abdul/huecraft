@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Release 1.3 Documented Bugs] - 8/11/23
+## [Release 1.3 and 1.3+ Documented Bugs] - 21/11/23
 
 ### Bugs:
 - Unexpected errors with the following message being shown: "Application error: a client-side exception has occurred (see the browser console for more information)."
 - View Changelog button in docs page is not according to selected color on menubar in mobile view.
+<hr>
+
+## [Minor Release 1.3+] - 21/11/23
+
+### Improvements:
+- Added embed support for website - Will take some hours to refresh.
+- Tweaked homepage for better optimization.
+- Polished the navbar UI.
 <hr>
 
 ## [Major Release 1.3] - 7/11/23
