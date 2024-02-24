@@ -2,11 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Release 1.3 and 1.3+ Documented Bugs] - 21/11/23
+## [Release 1.3 and 1.3+ Documented Bugs] - 24/2/24
 
-### Bugs:
+### Bugs: 
+[21/11/23]:
 - Unexpected errors with the following message being shown: "Application error: a client-side exception has occurred (see the browser console for more information)."
 - View Changelog button in docs page is not according to selected color on menubar in mobile view.
+[24/2/24]:
+- Command menu is blurry.
+- "Rotate your phone" alert text not centered on mobile.
+
 <hr>
 
 ## [Minor Release 1.3+] - 21/11/23

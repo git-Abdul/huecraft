@@ -157,10 +157,10 @@ export function NavBar() {
                 </CommandDialog>
             </div >
             {/* Navbar */}
-            < nav className="backdrop-blur-lg border-b bg-white/10 dark:bg-zinc-900/30 fixed py-3 md:py-0 dark:border-zinc-700 select-none w-full top-0 z-10" >
+            < nav className="backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 fixed py-3 md:py-0 select-none w-full top-0 z-10 shadow-sm" >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 my-1">
                     <Link href={"/"} className="flex items-center m-1">
-                        <Image src="favicon.png" alt="logo" className="h-7 w-7 mr-2" width={"0"} height={"0"} />
+                        <Image src="favicon.png" alt="logo" className="h-8 w-8 mr-2" width={"0"} height={"0"} />
                         <h1 className="text-2xl font-outfit font-bold mt-[2px]">HueCraft</h1>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">
