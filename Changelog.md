@@ -2,16 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Release 1.3 and 1.3+ Documented Bugs] - 24/2/24
+## [Release 1.4 Documented Bugs] - 24/2/24
 
 ### Bugs: 
-[21/11/23]:
+[29/2/24]:
 - Unexpected errors with the following message being shown: "Application error: a client-side exception has occurred (see the browser console for more information)."
-- View Changelog button in docs page is not according to selected color on menubar in mobile view.
-[24/2/24]:
-- Command menu is blurry.
-- "Rotate your phone" alert text not centered on mobile.
 
+<hr>
+
+## [Major Release 1.4] -29/2/24
+
+### Note: Overhaul for homepage completed, other pages will be updated in the upcoming updates.
+
+### Additions:
+- Added a new scroll alert on the homepage.
+- Added new mini sections/templates on the Homepage, cookies window, login window and domain viewer window.
+- Added new components using https://ui.shadcn.com
+- Added mobile color selection!
+- Added export file UI and improved exporting to a great extent.
+
+### Improvements:
+- Polished the menubar UI and made it cleaner, easily accessible.
+- Improved homepage UI made it easy to the eye.
+- package.json version updated.
+
+### Fixes: 
+- "Rotate your phone" alert text not centered on mobile. - Fixed.
+- Command menu is blurry. - Fixed.
+- View Changelog button in docs page is not according to selected color on menubar in mobile view. - Fixed.
 <hr>
 
 ## [Minor Release 1.3+] - 21/11/23

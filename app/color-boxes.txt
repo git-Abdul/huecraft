@@ -1,0 +1,19 @@
+        <div style={{ zIndex: 0 }} className="mt-20 mx-20 md:block hidden">
+          {/* Color boxes */}
+          <div className="flex justify-center gap-2 mt-16 px-8 py-2">
+            <div className="rounded-lg w-56 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: primaryColor }}></div>
+            <div className="rounded-lg w-52 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: secondaryColor }}></div>
+            <div className="rounded-lg w-44 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: bgColor }}></div>
+            <div className="rounded-lg w-40 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: accentColor }}></div>
+            <div className="rounded-md w-4 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: textColor }}></div>
+            <div className="rounded-lg w-52 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: secondaryColor }}></div>
+          </div>
+          <div className="flex justify-center gap-2 px-8 py-2">
+            <div className="rounded-lg w-36 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: accentColor }}></div>
+            <div className="rounded-lg w-48 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: secondaryColor }}></div>
+            <div className="rounded-lg w-72 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: primaryColor }}></div>
+            <div className="rounded-lg w-40 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: bgColor }}></div>
+            <div className="rounded-lg w-72 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: primaryColor }}></div>
+            <div className="rounded-lg w-48 md:h-44 h-20 shadow-2xl" style={{ backgroundColor: secondaryColor }}></div>
+          </div>
+        </div>

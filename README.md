@@ -1,9 +1,10 @@
 # HueCraft - A place to visualize your designs.
 ## Everything is present in the [Documentation](https://git-Abdul.github.io/huecraft/docs)
 <hr>
-<img src="./public/thumbnail.png">
-<img src="./public/docs.png">
-<img src="./public/dashboard.png">
-<img src="./public/pricing.png">
-<img src="./public/blog.png">
+<img src="./public/ThumbnailMain.png">
+<img src="./public/1.4 Home.png">
+<img src="./public/1.4 dashboard.png">
+<img src="./public/1.4 grid.png">
+<img src="./public/1.4 download.png">
+<img src="./public/1.4 blogpost.png">
 <hr>
