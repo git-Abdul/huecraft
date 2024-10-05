@@ -4,8 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Release 1.5 Documented Bugs] - 5/10/24
 
-### Bugs: 
+### Bugs: (From high to low priority)
 [5/10/24]:
+
+- Images not loading in homepage, blog and respective blog articles.
+
 - Unexpected errors with the following message being shown: "Application error: a client-side exception has occurred (see the browser console for more information)."
 
 <hr>
