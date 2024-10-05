@@ -33,10 +33,10 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 
-import { HomeIcon, LayersIcon, MoonIcon, SunIcon, FileTextIcon, CalendarIcon, IdCardIcon, ReaderIcon, InfoCircledIcon, QuestionMarkCircledIcon, BlendingModeIcon, EyeOpenIcon, LaptopIcon, FileIcon, RocketIcon } from "@radix-ui/react-icons"
+import { HomeIcon, Link2Icon, LayersIcon, MoonIcon, SunIcon, FileTextIcon, CalendarIcon, IdCardIcon, ReaderIcon, InfoCircledIcon, QuestionMarkCircledIcon, BlendingModeIcon, EyeOpenIcon, LaptopIcon, FileIcon, RocketIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button";
 
-export function NavBar() {
+export function NavBar({txtColor, secColor}) {
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const toggleNav = () => {
@@ -68,10 +68,10 @@ export function NavBar() {
                                 </CommandItem>
                             </Link>
 
-                            <Link href={"/docs"}>
+                            <Link href={"/blog"}>
                                 <CommandItem>
                                     <FileTextIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Documentation</span>
+                                    <span className="font-inter">Blogfolio</span>
                                 </CommandItem>
                             </Link>
 
@@ -108,48 +108,24 @@ export function NavBar() {
                         </CommandGroup>
 
                         <CommandSeparator />
-                        <CommandGroup heading="Documentation">
+                        <CommandGroup heading="Blog">
                             <CommandSeparator />
-                            <Link href={"/docs#introduction"}>
+                            <Link href={"/blog"}>
                                 <CommandItem>
-                                    <InfoCircledIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Introduction</span>
+                                    <FileTextIcon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Blogfolio</span>
                                 </CommandItem>
                             </Link>
-                            <Link href={"/docs#how-it-works"}>
+                            <Link href={"/blog/1.5"}>
                                 <CommandItem>
-                                    <QuestionMarkCircledIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">How does it work?</span>
+                                    <Link2Icon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Version 1.5</span>
                                 </CommandItem>
                             </Link>
-                            <Link href={"/docs#colors"}>
+                            <Link href={"/blog/1.4"}>
                                 <CommandItem>
-                                    <BlendingModeIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Selecting colors</span>
-                                </CommandItem>
-                            </Link>
-                            <Link href={"/docs#theming"}>
-                                <CommandItem>
-                                    <EyeOpenIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Theming</span>
-                                </CommandItem>
-                            </Link>
-                            <Link href={"/docs#upcoming"}>
-                                <CommandItem>
-                                    <LaptopIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Upcoming</span>
-                                </CommandItem>
-                            </Link>
-                            <Link href={"/docs#changelog"}>
-                                <CommandItem>
-                                    <FileIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Changelog</span>
-                                </CommandItem>
-                            </Link>
-                            <Link href={"/docs#version"}>
-                                <CommandItem>
-                                    <RocketIcon className="mr-2 h-4 w-4" />
-                                    <span className="font-inter">Version</span>
+                                    <Link2Icon className="mr-2 h-4 w-4" />
+                                    <span className="font-inter">Version 1.4</span>
                                 </CommandItem>
                             </Link>
                         </CommandGroup>
@@ -157,24 +133,24 @@ export function NavBar() {
                 </CommandDialog>
             </div >
             {/* Navbar */}
-            < nav className="backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30 fixed py-3 md:py-0 select-none w-full top-0 z-10 shadow-sm" >
+            < nav className="backdrop-blur-lg md:rounded-none md:rounded-b-none rounded-b-lg bg-white/10 dark:bg-zinc-800/30 fixed py-3 md:py-0 select-none w-full top-0 z-10 shadow-sm" >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 my-1">
                     <Link href={"/"} className="flex items-center m-1">
-                        <Image src="favicon.png" alt="logo" className="h-8 w-8 mr-2" width={"0"} height={"0"} />
-                        <h1 className="text-2xl font-outfit font-bold mt-[2px]">HueCraft</h1>
+                        <Image src="/favicon.png" alt="logo" className="h-6 w-6 mr-2" width={"0"} height={"0"} />
+                        <h1 style={{color: txtColor}} className="text-2xl font-outfit font-bold mt-[2px]">HueCraft</h1>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">
                         <div className="md:invisible">
                             <Sheet className="border-none">
                                 <SheetTrigger asChild>
-                                    <Button variant="outline" size="icon">
+                                    <Button variant="outline" size="icon" className="bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">
                                         <DocsIcons />
-                                        <span className="sr-only">Open Documentation</span>
+                                        <span className="sr-only">Open Blog</span>
                                     </Button>
                                 </SheetTrigger>
                                 <SheetContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                                     <SheetHeader>
-                                        <SheetTitle>Documentation</SheetTitle>
+                                        <Link href={"/blog"}><SheetTitle className="text-xl font-inter" >Blog</SheetTitle></Link>
                                         <SheetDescription>
                                             <div className="flex justify-center"><DocsList /></div>
                                         </SheetDescription>
@@ -185,7 +161,7 @@ export function NavBar() {
                         <div className="md:invisible">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
-                                    <Button variant="outline" size="icon">
+                                    <Button variant="outline" size="icon" className="bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">
                                         <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                                         <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                                         <span className="sr-only">Toggle theme</span>
@@ -212,13 +188,14 @@ export function NavBar() {
                             data-collapse-toggle="navbar-default"
                             type="button"
                             variant="outline"
-                            className="inline-flex items-center p-2 w-9 h-9 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 dark:text-white text-black dark:focus:ring-gray-600"
+                            className="bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none inline-flex items-center p-2 w-9 h-9 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 dark:text-white text-black dark:focus:ring-gray-600"
                             aria-controls="navbar-default"
                             aria-expanded={isNavOpen ? "true" : "false"}
                         >
                             <span className="sr-only">Open main menu</span>
                             <svg
-                                class="w-5 h-5"
+                                style={{color: txtColor}}
+                                class="w-4 h-4"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -241,17 +218,17 @@ export function NavBar() {
                     >
                         <ul className="flex flex-col p-4 md:p-0 md:mb-0 -mb-32 mt-4 md:flex-row md:space-x-3 font-medium md:mt-0 md:border-0 transition-all ease-in-out duration-75">
                             <li className="my-2 block md:hidden">
-                                <Button onClick={toggleDialog} variant="outline" className="dark:text-zinc-400 text-zinc-600 backdrop-blur-md">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
+                                <Button onClick={toggleDialog} variant="outline" className="text-black dark:text-white font-poppins backdrop-blur-md bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">Command Pannel <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
                             </li>
-                            <li className="py-3 rounded-lg md:dark:bg-transparent bg-orange-200 p-4 my-2 md:my-0 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
+                            <li style={{backgroundColor: secColor}} className="py-3 rounded-lg md:dark:bg-transparent  p-4 my-2 md:my-0 font-bridge transition duration-300 ease-in-out text-lg md:invisible visible">
                                 <Link href={"/"}><p>Home</p></Link>
                             </li>
-                            <li className="py-3 rounded-lg visible md:hidden md:dark:bg-transparent bg-orange-200 p-4 md:p-0 md:py-4 my-2 md:my-0 md:bg-transparent font-bridge md:text-base transition duration-300 ease-in-out text-lg">
-                                <Link href={"/docs"}><p>Docs</p></Link>
+                            <li style={{backgroundColor: secColor}} className="py-3 rounded-lg visible md:hidden md:dark:bg-transparent p-4 md:p-0 md:py-4 my-2 md:my-0 md:bg-transparent font-bridge md:text-base transition duration-300 ease-in-out text-lg">
+                                <Link href={"/blog"}><p>Blog</p></Link>
                             </li>
                             <DropdownMenu>
                                 <DropdownMenuTrigger className="md:hidden visible">
-                                    <li className="py-3 rounded-lg bg-orange-200 md:dark:bg-transparent  p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge md:text-base transition duration-300 ease-in-out text-lg">
+                                    <li style={{backgroundColor: secColor}} className="py-3 rounded-lg md:dark:bg-transparent  p-4 md:p-0 md:py-3 my-2 md:my-0 md:bg-transparent font-bridge md:text-base transition duration-300 ease-in-out text-lg">
                                         <p className="text-left">Templates</p>
                                         <DropdownMenuContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
                                             <DropdownMenuLabel>Available templates</DropdownMenuLabel>
@@ -282,11 +259,11 @@ export function NavBar() {
                                 <Badge variant={"outline"} className="ml-2 font-inter font-thin">⌘ K</Badge>
                             </li>
                             <li className="my-2 hidden lg:block">
-                                <Button onClick={toggleDialog} variant="outline" className="dark:text-zinc-400 text-zinc-600">Search documentation... <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
+                                <Button onClick={toggleDialog} variant="outline" className="dark:text-zinc-400 text-zinc-600 font-inter bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">Command Pannel <Badge variant="secondary" className="ml-2 font-inter font-thin">⌘ K</Badge></Button>
                             </li>
                             <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
                                 <Link href={"/"}>
-                                    <Button variant="outline" size="icon">
+                                    <Button variant="outline" size="icon" className="bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">
                                         <HomeIcon />
                                         <span className="sr-only">Home</span>
                                     </Button>
@@ -294,29 +271,9 @@ export function NavBar() {
                             </li>
                             <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
                                 <div className="">
-                                    <Sheet>
-                                        <SheetTrigger asChild>
-                                            <Button variant="outline" size="icon">
-                                                <DocsIcons />
-                                                <span className="sr-only">Open Templates</span>
-                                            </Button>
-                                        </SheetTrigger>
-                                        <SheetContent className="backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">
-                                            <SheetHeader>
-                                                <SheetTitle className="flex justify-center text-xl"><Link href={"/docs"}>Documentation</Link></SheetTitle>
-                                                <SheetDescription>
-                                                    <div className="flex justify-center m-0"><DocsList /></div>
-                                                </SheetDescription>
-                                            </SheetHeader>
-                                        </SheetContent>
-                                    </Sheet>
-                                </div>
-                            </li>
-                            <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
-                                <div className="">
                                     <DropdownMenu>
                                         <DropdownMenuTrigger className="hidden md:block">
-                                            <Button variant="outline" size="icon">
+                                            <Button variant="outline" size="icon" className="bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">
                                                 <LayersIcon />
                                                 <span className="sr-only">Open Templates</span>
                                             </Button>
@@ -349,7 +306,7 @@ export function NavBar() {
                             <li className="py-2 transition duration-300 ease-in-out text-lg md:mx-32 invisible md:visible">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
-                                        <Button variant="outline" size="icon">
+                                        <Button variant="outline" size="icon" className="bg-transparent hover:bg-transparent border-none hover:border-none dark:bg-transparent dark:hover:bg-transparent dark:border-none dark:hover:border-none">
                                             <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                                             <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                                             <span className="sr-only">Toggle theme</span>

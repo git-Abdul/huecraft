@@ -26,7 +26,8 @@ module.exports = {
         "borel": ["Borel"],
         "bebas": ["Bebas Neue"],
         "outfit": ["Outfit"],
-        "inter": ["Inter"]
+        "inter": ["Inter"],
+        "nunito": ["Nunito"],
       },
       colors: {
         "primary": "#2563eb",

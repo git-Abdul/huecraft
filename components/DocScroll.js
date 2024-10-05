@@ -8,7 +8,6 @@ export function DocScroll() {
         <ScrollArea className="w-48 fixed h-screen text-center text-lg border-r dark:border-zinc-700 border-gray-300">
             <div className="p-4 text-sm">
                 <h4 className="text-xl p-2 font-inter font-bold leading-none text-center md:block hidden">Documentation</h4>
-                <Badge variant="destructive">In Development</Badge>
                 <Link href={"/docs#introduction"}>
                 <div className="mt-6 dark:hover:bg-zinc-800 dark:bg-zinc-800 bg-slate-300 hover:bg-slate-300 transition ease-in-out duration-200 p-1 rounded-lg">
                     <p>Introduction</p>

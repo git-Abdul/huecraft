@@ -12,7 +12,7 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 import Link from "next/link"
-import { HomeIcon, FileTextIcon, LayersIcon, CalendarIcon, IdCardIcon, ReaderIcon, InfoCircledIcon, QuestionMarkCircledIcon, BlendingModeIcon, EyeOpenIcon, LaptopIcon, FileIcon, RocketIcon } from "@radix-ui/react-icons"
+import { HomeIcon, FileTextIcon, Link2Icon, LayersIcon, CalendarIcon, IdCardIcon, ReaderIcon, InfoCircledIcon, QuestionMarkCircledIcon, BlendingModeIcon, EyeOpenIcon, LaptopIcon, FileIcon, RocketIcon } from "@radix-ui/react-icons"
 
 export function Commands() {
   const [open, setOpen] = React.useState(false)
@@ -44,10 +44,10 @@ export function Commands() {
             </CommandItem>
           </Link>
 
-          <Link href={"/docs"}>
+          <Link href={"/blog"}>
             <CommandItem>
               <FileTextIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Documentation</span>
+              <span className="font-inter">Blogfolio</span>
             </CommandItem>
           </Link>
 
@@ -60,7 +60,7 @@ export function Commands() {
 
         </CommandGroup>
         <CommandSeparator />
-        
+
         <CommandGroup heading="Templates">
           <CommandSeparator />
           <Link href={"/dashboard"}>
@@ -84,48 +84,24 @@ export function Commands() {
         </CommandGroup>
 
         <CommandSeparator />
-        <CommandGroup heading="Documentation">
+        <CommandGroup heading="Blog">
           <CommandSeparator />
-          <Link href={"/docs#introduction"}>
+          <Link href={"/blog"}>
             <CommandItem>
-              <InfoCircledIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Introduction</span>
+              <FileTextIcon className="mr-2 h-4 w-4" />
+              <span className="font-inter">Blogfolio</span>
             </CommandItem>
           </Link>
-          <Link href={"/docs#how-it-works"}>
+          <Link href={"/blog/1.5"}>
             <CommandItem>
-              <QuestionMarkCircledIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">How does it work?</span>
+              <Link2Icon className="mr-2 h-4 w-4" />
+              <span className="font-inter">Version 1.5</span>
             </CommandItem>
           </Link>
-          <Link href={"/docs#colors"}>
+          <Link href={"/blog/1.4"}>
             <CommandItem>
-              <BlendingModeIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Selecting colors</span>
-            </CommandItem>
-          </Link>
-          <Link href={"/docs#theming"}>
-            <CommandItem>
-              <EyeOpenIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Theming</span>
-            </CommandItem>
-          </Link>
-          <Link href={"/docs#upcoming"}>
-            <CommandItem>
-              <LaptopIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Upcoming</span>
-            </CommandItem>
-          </Link>
-          <Link href={"/docs#changelog"}>
-            <CommandItem>
-              <FileIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Changelog</span>
-            </CommandItem>
-          </Link>
-          <Link href={"/docs#version"}>
-            <CommandItem>
-              <RocketIcon className="mr-2 h-4 w-4" />
-              <span className="font-inter">Version</span>
+              <Link2Icon className="mr-2 h-4 w-4" />
+              <span className="font-inter">Version 1.4</span>
             </CommandItem>
           </Link>
         </CommandGroup>

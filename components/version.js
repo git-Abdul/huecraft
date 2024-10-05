@@ -1,1 +1,2 @@
-export const version = "1.3+"
+export const version = "1.5"
+export const features = "This is the next major update. It adds major UI overhauls. The main feature or the main revamp of this update is the introduction of the blogfolio instead of the documentations page. It also changes the main theme of the website from orange to pale green giving it an apple green tint. It also adds randomized color selection! (beta)"

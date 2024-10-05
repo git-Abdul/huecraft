@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <body className="bg-light dark:bg-dark select-none">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

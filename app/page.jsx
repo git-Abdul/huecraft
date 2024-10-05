@@ -1,24 +1,22 @@
 "use client"
 import { useState } from "react";
+import { useEffect } from 'react';
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { ArrowRightIcon, DownloadIcon, ExternalLinkIcon, ArchiveIcon, MoonIcon, RotateCounterClockwiseIcon, SunIcon, CookieIcon } from "@radix-ui/react-icons";
-import { ChromePicker } from "react-color";
+import { ArrowRightIcon, DownloadIcon, ExternalLinkIcon, ArchiveIcon, MoonIcon, RotateCounterClockwiseIcon, SunIcon, CookieIcon, DividerVerticalIcon, UpdateIcon, LayersIcon } from "@radix-ui/react-icons";
+import { ChromePicker, SketchPicker } from "react-color";
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Footer } from 'flowbite-react';
+import { features, version } from "@/components/version";
+import { diceIcon } from "@/components/diceIcon";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import {
   Dialog,
   DialogContent,
@@ -55,13 +53,13 @@ export default function Home() {
   const [open, setOpen] = useState(false)
 
   const [selectedColor, setSelectedColor] = useState(null);
-  const [textColor, setTextColor] = useState("#202020");
-  const [bgColor, setBgColor] = useState("#FFFAEB");
-  const [primaryColor, setPrimaryColor] = useState("#FF8400");
-  const [secondaryColor, setSecondaryColor] = useState("#FFF5D6");
-  const [accentColor, setAccentColor] = useState("#CF4307");
+  const [textColor, setTextColor] = useState("#3d4136");
+  const [bgColor, setBgColor] = useState("#E6FFE6");
+  const [primaryColor, setPrimaryColor] = useState("#7cb14c");
+  const [secondaryColor, setSecondaryColor] = useState("#dfecad");
+  const [accentColor, setAccentColor] = useState("#569041");
 
-  const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;;
+  const textContent = `Text Color: ${textColor}\nBackground Color: ${bgColor}\nPrimary Color: ${primaryColor}\nSecondary Color: ${secondaryColor}\nAccent Color: ${accentColor}`;
 
   const DownloadFile = () => {
     const blob = new Blob([textContent], { type: 'text/plain' });
@@ -94,10 +92,53 @@ export default function Home() {
     setSelectedColor(null);
   };
 
+  const colorPalettes = [
+    { background: "#E6FFE6", text: "#3d4136", accent: "#569041", secondary: "#dfecad", primary: "#7cb14c" },
+    { background: '#FFFAEB', text: '#202020', accent: "#CF4307", secondary: "#FFF5D6", primary: "#FF8400" },
+    { background: '#fbfbfe', text: '#050315', accent: "#433bff", secondary: "#dedcff", primary: "#2f27ce" },
+    { background: '#f4f8f7', text: '#050606', accent: "#4D6F6C", secondary: "#8de0d5", primary: "#417970" },
+    { background: '#f6feff', text: '#001517', accent: "#9A3EA4", secondary: "#fe69b8", primary: "#02e6fe" },
+    { background: '#fdf5f5', text: '#0d0304', accent: "#93df58", secondary: "#e2ea92", primary: "#d62b3e" },
+    { background: '#f1fcfd', text: '#03181b', accent: "#9E2F96", secondary: "#b778ed", primary: "#2ed1e4" },
+    { background: '#f3f7f8', text: '#0c1314', accent: "#8697b7", secondary: "#a4b4c9", primary: "#609ea0" },
+    { background: '#f7f8f5', text: '#13160e', accent: "#9d8bb3", secondary: "#a8b2c6", primary: "#8c9f6d" },
+  ];
+
+  const [currentPaletteIndex, setCurrentPaletteIndex] = useState(0);
+
+  const handleSpaceBarPress = (event) => {
+    if (event.code === "Space") {
+      console.log("Space bar pressed!");
+      handleRandomizeColors();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleSpaceBarPress);
+    return () => {
+      window.removeEventListener("keydown", handleSpaceBarPress);
+    };
+  }, []);
+
+  const handleRandomizeColors = () => {
+    setCurrentPaletteIndex((prevIndex) => {
+      const nextIndex = (prevIndex + 1) % colorPalettes.length;
+      const currentPalette = colorPalettes[currentPaletteIndex];
+      setBgColor(currentPalette.background)
+      setTextColor(currentPalette.text)
+      setPrimaryColor(currentPalette.primary)
+      setSecondaryColor(currentPalette.secondary)
+      setAccentColor(currentPalette.accent)
+      return nextIndex;
+    });
+  };
+
   return (
-    <body style={{ backgroundColor: bgColor }}>
+    <body style={{ backgroundColor: bgColor, color: textColor }}>
       <main>
-        <NavBar />
+        <div>
+          <NavBar txtColor={textColor} secColor={secondaryColor} />
+        </div>
         <div className="mt-32">
           <div style={{ zIndex: 0 }} className="mt-20 md:hidden block">
             {/* Color boxes */}
@@ -121,32 +162,33 @@ export default function Home() {
               Visualize your <span className="font-borel" style={{ color: primaryColor }}>design</span> on the <span className="font-effect italic font-medium" style={{ WebkitTextStrokeColor: textColor }}>real</span> web.
             </h1>
             <div className="md:ml-20 mt-6 mb-5">
-              <AlertDialog>
-                <AlertDialogTrigger>
+              <Dialog>
+                <DialogTrigger>
                   <Badge style={{ border: `1px solid ${accentColor}` }} className="ml-1 px-4 py-1 font-medium font-inter backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30" variant="outline"><div className="flex justify-normal"><p style={{ color: textColor }} className="mr-2">✨ New: <b>Mobile color selection</b> and UI overhaul.</p> <ArrowRightIcon style={{ color: primaryColor }} className="" /></div></Badge>
-                </AlertDialogTrigger>
-                <AlertDialogContent style={{ backgroundColor: bgColor, backdropFilter: "blur(20px)" }} className="select-none">
-                  <AlertDialogHeader>
-                    <AlertDialogTitle style={{ color: textColor }}>✨ New update! v1.4</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      This is the next major update. It adds major UI overhauls and makes the UI more pleasing to the eye, it adds color selection for mobile!! also whilst fixing many bugs and issues that existed from the previous version.
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel className="border-none" style={{ backgroundColor: secondaryColor, color: textColor }} >Cancel</AlertDialogCancel>
-                    <AlertDialogAction
-                      onClick={() => {
-                        window.open("https://github.com/git-Abdul/huecraft/blob/master/Changelog.md", "_blank");
-                      }}
-                      style={{ backgroundColor: primaryColor }}
-                      className="text-white"
-                    >
-                      Changelog
-                    </AlertDialogAction>
-
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
+                </DialogTrigger>
+                <DialogContent style={{ backgroundColor: bgColor, backdropFilter: "blur(20px)" }} className="select-none">
+                  <DialogHeader>
+                    <DialogTitle style={{ color: textColor }} className="mb-2 font-inter">✨ New update! v{version}</DialogTitle>
+                    <DialogDescription>
+                      {features}
+                    </DialogDescription>
+                  </DialogHeader>
+                  <DialogFooter asChild>
+                    <div asChild className="grid grid-cols-2 gap-2">
+                      <DialogClose className="w-full"><Button className="border-none w-full" style={{ backgroundColor: secondaryColor, color: textColor }} >Cancel</Button></DialogClose>
+                      <Button
+                        onClick={() => {
+                          window.open("https://github.com/git-Abdul/huecraft/blob/master/Changelog.md", "_blank");
+                        }}
+                        style={{ backgroundColor: primaryColor }}
+                        className="text-white"
+                      >
+                        Changelog
+                      </Button>
+                    </div>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
             <div className="md:hidden flex justify-center">
               <Badge
@@ -164,8 +206,8 @@ export default function Home() {
             <Link href={"/"}>
               <button style={{ backgroundColor: primaryColor }} className="shadow-2xl font-inter font-smedium dark:text-white text-white hover:-translate-y-1 rounded-lg py-3 px-4 transition ease-in-out duration-150">Get started</button>
             </Link>
-            <Link href={"/docs"}>
-              <button style={{ backgroundColor: secondaryColor, color: textColor }} className="font-inter font-medium hover:-translate-y-1 rounded-lg py-3 px-4 transition ease-in-out duration-150 backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">Documentation</button>
+            <Link href={"/blog"}>
+              <button style={{ backgroundColor: secondaryColor, color: textColor }} className="font-inter font-medium hover:-translate-y-1 rounded-lg py-3 px-4 transition ease-in-out duration-150 backdrop-blur-lg bg-white/10 dark:bg-zinc-900/30">Blogfolio</button>
             </Link>
           </div>
           <div className="flex md:justify-normal justify-center md:ml-32 mt-4">
@@ -178,7 +220,7 @@ export default function Home() {
 
 
         <div className="grid grid-cols-1 gap-4">
-          <div style={{ zIndex: 0 }} className="mt-[100px] mx-20 md:block hidden">
+          <div style={{ zIndex: 0 }} className="mt-[100px] md:mx-20 md:block hidden">
             {/* Color boxes */}
             <div className="flex md:justify-normal justify-center gap-2 mt-16 px-8 py-2">
               <Card className="rounded-lg sm:w-6/12 w-4/6 md:h-64 h-20" style={{ backgroundColor: primaryColor }}>
@@ -287,7 +329,7 @@ export default function Home() {
                       <div className="grid items-center grid-cols-1 md:grid-cols-[80px_1fr_200px_200px] py-2 px-4">
                         <div className="font-medium md:order-1 md:col-span-2 md:grid md:items-center md:gap-2">
                           <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl">mysite.net</h3>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">Expires on Jan 10, 2024</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">Expires on Jan 31, 2024</p>
                         </div>
                         <div className="flex items-center justify-end order-1 md:order-2 gap-2">
                           <a
@@ -341,107 +383,118 @@ export default function Home() {
 
         {/**Mobile MenuBar */}
         <div className="text-center items-center justify-center flex md:invisible visible">
-          <div className="grid w-full grid-cols-2 justify-center gap-2 font-poppins backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-800/30 p-2 fixed mt-20 bottom-0 rounded-md" style={{ zIndex: "5" }}>
-            <Drawer className="backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-800/30">
-              <DrawerTrigger asChild>
-                <Button
-                  className="py-6 px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
-                  style={{ backgroundColor: bgColor }}
-                >
-                  Colors
-                </Button>
-              </DrawerTrigger>
-              <DrawerContent>
-                <div className="mx-auto w-full max-w-sm">
-                  <DrawerHeader>
-                    <DrawerTitle>Color Picker</DrawerTitle>
-                    <DrawerDescription>Choose your own style and theme!</DrawerDescription>
-                  </DrawerHeader>
-                  <div className="visible text-center w-full">
-                    <div className="grid grid-cols-1 w-full justify-center gap-1 font-poppins backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-800/30 p-2 bottom-0 mb-5 rounded-md" style={{ zIndex: "5" }}>
-                      {/* Color buttons */}
-                      <DrawerClose asChild>
-                        <Button
-                          className="py-6 w-full px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
-                          style={{ backgroundColor: "#202020", color: "#fff" }}
-                          onClick={() => setSelectedColor("text")}
-                        >
-                          Text
-                        </Button>
-                      </DrawerClose>
-                      <DrawerClose asChild>
-                        <Button
-                          className="py-6 w-full px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
-                          style={{ backgroundColor: bgColor }}
-                          onClick={() => setSelectedColor("bg")}
-                        >
-                          Background
-                        </Button>
-                      </DrawerClose>
-                      <DrawerClose asChild>
-                        <Button
-                          className="py-6 w-full px-5 text-sm dark:text-white transition-all ease-in hover:ring hover:ring-gray-400"
-                          style={{ backgroundColor: primaryColor }}
-                          onClick={() => setSelectedColor("primary")}
-                        >
-                          Primary
-                        </Button>
-                      </DrawerClose>
-                      <DrawerClose asChild>
-                        <Button
-                          className="py-6 w-full px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
-                          style={{ backgroundColor: secondaryColor }}
-                          onClick={() => setSelectedColor("secondary")}
-                        >
-                          Secondary
-                        </Button>
-                      </DrawerClose>
-                      <DrawerClose asChild>
-                        <Button
-                          className="py-6 w-full px-5 text-sm dark:text-white transition-all ease-in hover:ring hover:ring-gray-400"
-                          style={{ backgroundColor: accentColor }}
-                          onClick={() => setSelectedColor("accent")}
-                        >
-                          Accent
-                        </Button>
-                      </DrawerClose>
+          <div className="w-full backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-800/30 p-2 fixed mt-20 bottom-0 rounded-md" style={{ zIndex: "5" }}>
+            <div className="grid grid-cols-1 justify-center gap-2 font-poppins w-full mb-[8px]">
+              <Button
+                className="py-6 px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
+                style={{ backgroundColor: bgColor }}
+                onClick={handleRandomizeColors}
+              >
+                <LayersIcon style={{ fill: accentColor, color: accentColor }} className="h-[20px] w-[20px]" />
+                <span className="sr-only">Randomize pallete</span>
+              </Button>
+            </div>
+            <div className="grid w-full grid-cols-2 justify-center gap-2 font-poppins ">
+              <Drawer className="backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-800/30">
+                <DrawerTrigger asChild>
+                  <Button
+                    className="py-6 px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
+                    style={{ backgroundColor: bgColor }}
+                  >
+                    Colors
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent>
+                  <div className="mx-auto w-full max-w-sm">
+                    <DrawerHeader>
+                      <DrawerTitle>Color Picker</DrawerTitle>
+                      <DrawerDescription>Choose your own style and theme!</DrawerDescription>
+                    </DrawerHeader>
+                    <div className="visible text-center w-full">
+                      <div className="grid grid-cols-1 w-full justify-center gap-1 font-poppins backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-800/30 p-2 bottom-0 mb-5 rounded-md" style={{ zIndex: "5" }}>
+                        {/* Color buttons */}
+                        <DrawerClose asChild>
+                          <Button
+                            className="py-6 w-full px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
+                            style={{ backgroundColor: "#202020", color: "#fff" }}
+                            onClick={() => setSelectedColor("text")}
+                          >
+                            Text
+                          </Button>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Button
+                            className="py-6 w-full px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
+                            style={{ backgroundColor: bgColor }}
+                            onClick={() => setSelectedColor("bg")}
+                          >
+                            Background
+                          </Button>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Button
+                            className="py-6 w-full px-5 text-sm dark:text-white transition-all ease-in hover:ring hover:ring-gray-400"
+                            style={{ backgroundColor: primaryColor }}
+                            onClick={() => setSelectedColor("primary")}
+                          >
+                            Primary
+                          </Button>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Button
+                            className="py-6 w-full px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
+                            style={{ backgroundColor: secondaryColor }}
+                            onClick={() => setSelectedColor("secondary")}
+                          >
+                            Secondary
+                          </Button>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Button
+                            className="py-6 w-full px-5 text-sm dark:text-white transition-all ease-in hover:ring hover:ring-gray-400"
+                            style={{ backgroundColor: accentColor }}
+                            onClick={() => setSelectedColor("accent")}
+                          >
+                            Accent
+                          </Button>
+                        </DrawerClose>
+                      </div>
                     </div>
+                    <DrawerFooter>
+                      <DrawerClose asChild>
+                        <Button variant="outline">Close</Button>
+                      </DrawerClose>
+                    </DrawerFooter>
+                  </div>
+                </DrawerContent>
+              </Drawer>
+
+              <Drawer>
+                <DrawerTrigger asChild>
+                  <Button
+                    className="py-6 px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
+                    style={{ backgroundColor: bgColor }}
+                  >
+                    <DownloadIcon style={{ color: accentColor }} className="h-[20px] w-[20px] rotate-0 scale-100 transition-all" />
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerTitle>Export Colors</DrawerTitle>
+                    <DrawerDescription>Export all your colors in a single file</DrawerDescription>
+                  </DrawerHeader>
+                  <div className="text-left h-max rounded-md font-mono backdrop-blur bg-gray-500/10 dark:bg-zinc-900/30 mx-2 p-5">
+                    <p>Text Color: {textColor}<br />Background Color: {bgColor}<br />Primary Color: {primaryColor}<br />Secondary Color: {secondaryColor}<br />Accent Color:{accentColor}</p>
                   </div>
                   <DrawerFooter>
+                    <Button onClick={DownloadFile} style={{ backgroundColor: primaryColor, color: bgColor }}>Export</Button>
                     <DrawerClose asChild>
                       <Button variant="outline">Close</Button>
                     </DrawerClose>
                   </DrawerFooter>
-                </div>
-              </DrawerContent>
-            </Drawer>
-
-            <Drawer>
-              <DrawerTrigger asChild>
-                <Button
-                  className="py-6 px-5 text-sm dark:text-white text-black transition-all ease-in hover:ring hover:ring-gray-400"
-                  style={{ backgroundColor: bgColor }}
-                >
-                  <DownloadIcon className="h-[16px] w-[16px] rotate-0 scale-100 transition-all" />
-                </Button>
-              </DrawerTrigger>
-              <DrawerContent>
-                <DrawerHeader>
-                  <DrawerTitle>Export Colors</DrawerTitle>
-                  <DrawerDescription>Export all your colors in a single file</DrawerDescription>
-                </DrawerHeader>
-                <div className="text-left h-max rounded-md font-mono backdrop-blur bg-gray-500/10 dark:bg-zinc-900/30 mx-2 p-5">
-                  <p>Text Color: {textColor}<br />Background Color: {bgColor}<br />Primary Color: {primaryColor}<br />Secondary Color: {secondaryColor}<br />Accent Color:{accentColor}</p>
-                </div>
-                <DrawerFooter>
-                  <Button onClick={DownloadFile} style={{ backgroundColor: primaryColor, color: bgColor }}>Export</Button>
-                  <DrawerClose asChild>
-                    <Button variant="outline">Close</Button>
-                  </DrawerClose>
-                </DrawerFooter>
-              </DrawerContent>
-            </Drawer>
-
+                </DrawerContent>
+              </Drawer>
+            </div>
           </div>
         </div>
 
@@ -488,18 +541,27 @@ export default function Home() {
             <hr className="w-0.5 rounded-lg h-11 outline-none bg-gray-800 mt-[1px] ml-2 -mr-2" />
             <Dialog open={open} onOpenChange={setOpen} style={{ backgroundColor: bgColor }}>
               <DialogTrigger>
-                <Button
-                  className="py-6 ml-2 text-sm dark:text-white transition-all ease-in hover:ring hover:ring-gray-400"
-                  style={{ backgroundColor: secondaryColor }}
-                >
-                  <Button
-                    className="text-md w-[3rem] h-[3rem]"
-                    size="icon"
-                    variant="link"
-                  >
-                    <DownloadIcon style={{ color: accentColor }} className="h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
-                  </Button>
-                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Button
+                        className="py-6 ml-2 text-sm dark:text-white transition-all ease-in hover:ring hover:ring-gray-400"
+                        style={{ backgroundColor: secondaryColor }}
+                      >
+                        <Button
+                          className="text-md w-[3rem] h-[3rem]"
+                          size="icon"
+                          variant="link"
+                        >
+                          <DownloadIcon style={{ color: accentColor }} className="h-[2rem] w-[2rem] rotate-0 scale-100 transition-all" />
+                        </Button>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent style={{ color: textColor }}>
+                      <p>Export colors</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </DialogTrigger>
               <DialogContent style={{ backgroundColor: bgColor }} className="sm:max-w-[425px]">
                 <DialogHeader>
@@ -520,18 +582,48 @@ export default function Home() {
               </DialogContent>
             </Dialog>
 
+            {/* Randomize colors button */}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Button
+                    className="py-6 px-0 text-sm dark:text-white outline-none transition-all ease-in hover:ring hover:ring-gray-400"
+                    style={{ backgroundColor: secondaryColor }}
+                    onClick={handleRandomizeColors}
+                  >
+                    <Button variant="link" size="icon" className="w-[3rem] h-[3rem]" onClick={handleRandomizeColors}>
+                      <LayersIcon style={{ fill: accentColor, color: accentColor }} height={32} width={32} />
+                      <span className="sr-only">Randomize pallete</span>
+                    </Button>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent style={{ color: textColor }}>
+                  <p>Randomize colors</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
             <Button
               className="py-6 px-0 text-sm dark:text-white outline-none transition-all ease-in hover:ring hover:ring-gray-400"
               style={{ backgroundColor: secondaryColor }}
             >
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="link" size="icon" className="w-[3rem] h-[3rem]">
-                    <SunIcon style={{ color: accentColor }} className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <MoonIcon style={{ color: accentColor }} className="absolute h-[2rem] w-[2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                    <span className="sr-only">Toggle theme</span>
-                  </Button>
-                </DropdownMenuTrigger>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="link" size="icon" className="w-[3rem] h-[3rem] mt-[2px]">
+                          <SunIcon style={{ color: accentColor }} className="absolute h-[2rem] w-[2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                          <MoonIcon style={{ color: accentColor }} className="absolute h-[2rem] w-[2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                          <span className="sr-only">Toggle theme</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                    </TooltipTrigger>
+                    <TooltipContent style={{ color: textColor }}>
+                      <p>Toggle Theme</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
                 <DropdownMenuContent className="backdrop-blur-lg bg-gray-500/10 dark:bg-zinc-900/30">
                   <DropdownMenuItem onClick={() => setTheme("light")}>
                     <SunIcon className="mr-2 h-4 w-4" />
@@ -544,14 +636,15 @@ export default function Home() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </Button>
-
           </div>
         </div>
-
         {
           selectedColor && (
             <div className="p-3 rounded-lg backdrop-blur-lg bg-white/10 dark:bg-zinc-800/30" style={{ position: "absolute", top: "100px", left: "50%", transform: "translateX(-50%)", position: "fixed", top: "calc(50% - 150px)", left: "50%", transform: "translateX(-50%)", zIndex: "200" }}>
-              <ChromePicker
+              <SketchPicker
+                style={
+                  {}
+                }
                 color={
                   selectedColor === "text"
                     ? textColor

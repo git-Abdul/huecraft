@@ -2,11 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Release 1.4 Documented Bugs] - 24/2/24
+## [Release 1.5 Documented Bugs] - 5/10/24
 
 ### Bugs: 
-[29/2/24]:
+[5/10/24]:
 - Unexpected errors with the following message being shown: "Application error: a client-side exception has occurred (see the browser console for more information)."
+
+<hr>
+
+## [Major Release 1.5] - 5/10/24
+
+### Additions:
+- Added blogfolio page
+- Added pages for previous version 1.4 and latest version 1.5.
+- Added random color pallete selection using predermined arrays. (beta)
+- Updated to NextJs 14.2:
+    - 53% faster local server startup
+    - 94% faster code updates with Fast Refresh
+- Added tooltips to menubar buttons.
+- Added randomize colors button in mobile. (beta)
+- Added new color picker. (may change in future)
+
+### Improvements:
+- Rounded the bottom of the navbar on smaller screens.
+
+### Fixes: 
+- Added params to navbar.js promotes reusability.
+- The buttons on Mobile navbar now have dynamic color selection.
+
+### Prospects:
+- Removing menubar from all pages and adding a general menubar component.
+- Adding custom color picker.
+- Forced dark mode for web contents.
 
 <hr>
 
