@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Footer } from 'flowbite-react';
 import { features, version } from "@/components/version";
-import { diceIcon } from "@/components/diceIcon";
 import {
   Tooltip,
   TooltipContent,
@@ -105,20 +104,6 @@ export default function Home() {
   ];
 
   const [currentPaletteIndex, setCurrentPaletteIndex] = useState(0);
-
-  const handleSpaceBarPress = (event) => {
-    if (event.code === "Space") {
-      console.log("Space bar pressed!");
-      handleRandomizeColors();
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleSpaceBarPress);
-    return () => {
-      window.removeEventListener("keydown", handleSpaceBarPress);
-    };
-  }, []);
 
   const handleRandomizeColors = () => {
     setCurrentPaletteIndex((prevIndex) => {

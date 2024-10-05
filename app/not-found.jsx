@@ -67,20 +67,6 @@ export default function Blog() {
 
     const [currentPaletteIndex, setCurrentPaletteIndex] = useState(0);
 
-    const handleSpaceBarPress = (event) => {
-        if (event.code === "Space") {
-            console.log("Space bar pressed!");
-            handleRandomizeColors();
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("keydown", handleSpaceBarPress);
-        return () => {
-            window.removeEventListener("keydown", handleSpaceBarPress);
-        };
-    }, []);
-
     const handleRandomizeColors = () => {
         setCurrentPaletteIndex((prevIndex) => {
             const nextIndex = (prevIndex + 1) % colorPalettes.length;
