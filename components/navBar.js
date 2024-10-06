@@ -136,7 +136,7 @@ export function NavBar({txtColor, secColor}) {
             < nav className="backdrop-blur-lg md:rounded-none md:rounded-b-none rounded-b-lg bg-white/10 dark:bg-zinc-800/30 fixed py-3 md:py-0 select-none w-full top-0 z-10 shadow-sm" >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 my-1">
                     <Link href={"/"} className="flex items-center m-1">
-                        <Image src="/favicon.png" alt="logo" className="h-6 w-6 mr-2" width={"0"} height={"0"} />
+                        <Image src="favicon.png" alt="logo" className="h-6 w-6 mr-2" width={"0"} height={"0"} />
                         <h1 style={{color: txtColor}} className="text-2xl font-outfit font-bold mt-[2px]">HueCraft</h1>
                     </Link>
                     <div className="flex justify-normal left-0 gap-2">

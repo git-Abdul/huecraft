@@ -148,7 +148,7 @@ export default function Version1_5() {
                                             <div className="p-10">
                                                 <Card style={{ backgroundColor: secondaryColor }}>
                                                     <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                        <img src="/green_heart.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                        <img src="green_heart.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                                     </CardContent>
                                                 </Card>
                                             </div>
@@ -157,7 +157,7 @@ export default function Version1_5() {
                                             <div className="p-10">
                                                 <Card style={{ backgroundColor: secondaryColor }}>
                                                     <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                        <img src="/green_apple.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                        <img src="green_apple.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                                     </CardContent>
                                                 </Card>
                                             </div>
@@ -166,7 +166,7 @@ export default function Version1_5() {
                                             <div className="p-10">
                                                 <Card style={{ backgroundColor: secondaryColor }}>
                                                     <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                        <img src="/green_book.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                        <img src="green_book.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                                     </CardContent>
                                                 </Card>
                                             </div>
@@ -175,7 +175,7 @@ export default function Version1_5() {
                                             <div className="p-10">
                                                 <Card style={{ backgroundColor: secondaryColor }}>
                                                     <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                        <img src="/green_salad.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                        <img src="green_salad.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                                     </CardContent>
                                                 </Card>
                                             </div>
@@ -211,7 +211,7 @@ export default function Version1_5() {
                                     <div className="p-2">
                                         <Card style={{ backgroundColor: secondaryColor }}>
                                             <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                <img src="/green_heart.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                <img src="green_heart.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                             </CardContent>
                                         </Card>
                                     </div>
@@ -220,7 +220,7 @@ export default function Version1_5() {
                                     <div className="p-2">
                                         <Card style={{ backgroundColor: secondaryColor }}>
                                             <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                <img src="/green_salad.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                <img src="green_salad.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                             </CardContent>
                                         </Card>
                                     </div>
@@ -229,7 +229,7 @@ export default function Version1_5() {
                                     <div className="p-2">
                                         <Card style={{ backgroundColor: secondaryColor }}>
                                             <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                <img src="/green_apple.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                <img src="green_apple.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                             </CardContent>
                                         </Card>
                                     </div>
@@ -238,7 +238,7 @@ export default function Version1_5() {
                                     <div className="p-2">
                                         <Card style={{ backgroundColor: secondaryColor }}>
                                             <CardContent className="flex aspect-square items-center justify-center p-1">
-                                                <img src="/green_book.svg" className="md:h-36 md:w-36 h-32 w-32" />
+                                                <img src="green_book.svg" className="md:h-36 md:w-36 h-32 w-32" />
                                             </CardContent>
                                         </Card>
                                     </div>
